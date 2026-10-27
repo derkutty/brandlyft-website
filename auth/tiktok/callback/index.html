@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connecting account · Brandlyft</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="logo" href="/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a></header>
+<main class="legal">
+<h1>Connecting your account</h1>
+<p id="status">Brandlyft is finishing the connection to your TikTok account. You can close this window once you see the confirmation.</p>
+<p>Questions? <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></p>
+</main>
+</div>
+<script>
+  var q = new URLSearchParams(location.search);
+  if (q.get("error")) {
+    document.getElementById("status").textContent = "The connection was cancelled or failed (" + q.get("error") + "). You can close this window and try again.";
+  }
+</script>
+</body>
+</html>
