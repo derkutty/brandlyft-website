@@ -14,7 +14,7 @@ button.btn, label.btn { border: 0; cursor: pointer; font: inherit; font-weight: 
 .row-between { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .channel { display: flex; flex-direction: column; gap: 12px; }
 .channel .head { display: flex; align-items: center; gap: 12px; }
-.channel img.avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: var(--line); }
+.channel img.avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: var(--ink); }
 .channel .name { font-weight: 700; }
 .channel .meta { color: var(--muted); font-size: 14px; }
 .stats { display: flex; gap: 18px; font-size: 14px; color: var(--ink-soft); }
@@ -27,14 +27,14 @@ button.btn, label.btn { border: 0; cursor: pointer; font: inherit; font-weight: 
 .vcard .small { font-size: 13px; color: var(--muted); }
 .vcard .btn { padding: 10px 12px; font-size: 14px; }
 .badge { display: inline-block; font-size: 12px; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 2px 8px; margin: 0 4px 4px 0; }
-dialog.sheet { border: 0; border-radius: 20px; padding: 0; width: min(920px, calc(100vw - 32px)); max-height: calc(100vh - 32px); background: var(--card); color: var(--ink); }
+dialog.sheet { overflow: auto; border: 0; border-radius: 20px; padding: 0; width: min(920px, calc(100vw - 32px)); max-height: calc(100vh - 32px); background: var(--card); color: var(--ink); }
 dialog.sheet::backdrop { background: rgba(20, 18, 28, .55); }
 dialog.sheet form { padding: 22px; }
 .sheet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .sheet-head h3 { margin: 0; font-size: 22px; }
 .x { background: none; border: 0; font-size: 28px; line-height: 1; cursor: pointer; color: var(--muted); }
 .creator { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; color: var(--ink-soft); font-size: 15px; }
-.creator img { width: 32px; height: 32px; border-radius: 50%; }
+.creator img { width: 32px; height: 32px; border-radius: 50%; background: var(--ink); }
 .post-grid { display: grid; grid-template-columns: 260px 1fr; gap: 22px; align-items: start; }
 .post-grid video { width: 100%; aspect-ratio: 9 / 16; background: #111; border-radius: 12px; }
 .field { display: block; font-weight: 600; font-size: 15px; margin-bottom: 16px; }
