@@ -169,6 +169,37 @@
     }).catch(function () { $("tt-section").hidden = true; });
   }
 
+  function loadInstagram() {
+    var m = state.me.accounts.meta, sel = $("ig-account");
+    var pages = m ? m.pages.filter(function (p) { return p.instagram; }) : [];
+    $("ig-section").hidden = !pages.length;
+    if (!pages.length) return;
+    if (!sel.options.length) {
+      pages.forEach(function (p) { sel.appendChild(el("option", { value: p.id, text: "@" + p.instagram.username })); });
+      sel.onchange = loadInstagram;
+    }
+    var box = $("ig-media");
+    box.innerHTML = "";
+    box.appendChild(el("p", { class: "note", text: "Loading…" }));
+    api("GET", "/api/instagram/media?page_id=" + encodeURIComponent(sel.value)).then(function (list) {
+      box.innerHTML = "";
+      if (!list.length) { box.appendChild(el("p", { class: "note", text: "No posts yet." })); return; }
+      list.forEach(function (v) {
+        box.appendChild(el("a", { class: "card vcard", href: v.permalink, target: "_blank", rel: "noopener", style: "text-decoration:none;color:inherit" }, [
+          el("img", { class: "cover", src: v.image || "", alt: "" }),
+          el("div", { class: "small", text: (v.type || "").replace("_", " ") + " · " + new Date(v.timestamp).toLocaleDateString("en-GB") }),
+          el("div", { class: "title", text: v.caption || "Instagram post" }),
+          el("div", { class: "stats" }, [
+            el("span", {}, [el("b", { text: num(v.views) }), "Views"]),
+            el("span", {}, [el("b", { text: num(v.reach) }), "Reach"]),
+            el("span", {}, [el("b", { text: num(v.likes) }), "Likes"]),
+            el("span", {}, [el("b", { text: num(v.comments) }), "Comments"])
+          ])
+        ]));
+      });
+    }).catch(function (e) { box.innerHTML = ""; box.appendChild(el("p", { class: "note", text: e.message })); });
+  }
+
   $("file").addEventListener("change", function () {
     var f = this.files[0], status = $("upload-status");
     this.value = "";
@@ -362,6 +393,7 @@
       if (r.instagram) res.appendChild(el("div", {}, [el("a", { href: r.instagram, target: "_blank", rel: "noopener", text: "View on Instagram" })]));
       if (r.facebook) res.appendChild(el("div", {}, [el("a", { href: r.facebook, target: "_blank", rel: "noopener", text: "View on Facebook" })]));
       loadVideos();
+      loadInstagram();
     }).catch(function (e) { res.hidden = true; err.hidden = false; err.textContent = e.message; b.disabled = false; });
   });
 
@@ -376,6 +408,7 @@
       renderChannels();
       loadVideos();
       loadTikTokVideos();
+      loadInstagram();
     });
   }
 

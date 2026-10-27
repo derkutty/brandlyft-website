@@ -17,7 +17,7 @@ button.btn, label.btn { border: 0; cursor: pointer; font: inherit; font-weight: 
 .channel img.avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: var(--ink); }
 .channel .name { font-weight: 700; }
 .channel .meta { color: var(--muted); font-size: 14px; }
-.stats { display: flex; gap: 18px; font-size: 14px; color: var(--ink-soft); }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--ink-soft); }
 .stats b { display: block; font-size: 18px; color: var(--ink); }
 .linkbtn { background: none; border: 0; padding: 0; color: var(--muted); font: inherit; font-size: 14px; text-decoration: underline; cursor: pointer; align-self: flex-start; }
 .videos { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
@@ -54,3 +54,4 @@ dialog.sheet form { padding: 22px; }
   .post-grid { grid-template-columns: 1fr; }
   .post-grid video { max-height: 50vh; }
 }
+.pick { font: inherit; font-size: 15px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); }
