@@ -55,3 +55,19 @@ dialog.sheet form { padding: 22px; }
   .post-grid video { max-height: 50vh; }
 }
 .pick { font: inherit; font-size: 15px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); }
+.brand-start { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.brand-start input { flex: 1 1 260px; font: inherit; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); }
+.profile { display: grid; gap: 18px; }
+.profile .row { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: start; }
+.profile .row > span:first-child { font-weight: 600; font-size: 14px; color: var(--muted); padding-top: 2px; }
+.profile ul { margin: 0; padding-left: 18px; color: var(--ink-soft); }
+.profile .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.profile .product { border: 1px solid var(--line); border-radius: 12px; padding: 8px; font-size: 14px; }
+.profile .product img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; background: var(--line); }
+.swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+.swatch { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-soft); }
+.swatch i { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--line); display: inline-block; }
+.check { background: #fff7e6; border: 1px solid #f3dfb2; border-radius: 12px; padding: 10px 14px; font-size: 14px; }
+.profile input.edit, .profile textarea.edit { width: 100%; font: inherit; font-size: 15px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
+.confirmed { color: #2e7d32; font-weight: 600; font-size: 14px; }
+@media (max-width: 640px) { .profile .row { grid-template-columns: 1fr; gap: 4px; } }

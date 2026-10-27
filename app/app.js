@@ -116,6 +116,99 @@
     api("POST", "/api/accounts/" + provider + "/disconnect").then(load).catch(function (e) { alert(e.message); });
   }
 
+  // Brand profile
+
+  var LIST_FIELDS = [["offers", "Offers"], ["usps", "What makes it special"], ["never_say", "Never say"]];
+  var TEXT_FIELDS = [["one_liner", "In one sentence"], ["tone", "Tone of voice"], ["address", "Addresses customers as"], ["audience", "Audience"]];
+
+  function renderBrand(b) {
+    var box = $("brand");
+    box.innerHTML = "";
+    if (!b || !b.profile) {
+      var input = el("input", { type: "url", placeholder: "yourbrand.com", "aria-label": "Your website" });
+      var go = el("button", { class: "btn", text: "Analyze my website" });
+      var note = el("p", { class: "note", text: "Brandlyft reads your website and shop like a browser: products, prices, colours, fonts and tone of voice." });
+      go.addEventListener("click", function () {
+        if (!input.value.trim()) { input.focus(); return; }
+        go.disabled = true;
+        note.textContent = "Reading your website… this takes about a minute.";
+        api("POST", "/api/brand/analyze", { url: input.value.trim() }).then(renderBrand)
+          .catch(function (e) { note.textContent = e.message; go.disabled = false; });
+      });
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") go.click(); });
+      box.appendChild(el("div", { class: "card" }, [
+        el("p", { text: "Start with your website. Brandlyft learns your brand from it and shows you what it understood." }),
+        el("div", { class: "brand-start" }, [input, go]), note]));
+      return;
+    }
+    var p = b.profile;
+    function row(label, content) { return content ? el("div", { class: "row" }, [el("span", { text: label }), content]) : null; }
+    function list(items) { return items && items.length ? el("ul", {}, items.map(function (t) { return el("li", { text: t }); })) : null; }
+    var products = (p.products || []).length ? el("div", { class: "products" }, p.products.map(function (x) {
+      return el("div", { class: "product" }, [x.image ? el("img", { src: x.image, alt: "" }) : null,
+        el("div", { class: "title", text: x.name || "" }), el("div", { class: "small", text: [x.price, x.note].filter(Boolean).join(" · ") })]);
+    })) : null;
+    var colors = (p.colors || []).length ? el("div", { class: "swatches" }, p.colors.map(function (c) {
+      var i = el("i"); i.style.background = c.hex; return el("span", { class: "swatch" }, [i, c.hex + (c.role ? " · " + c.role : "")]);
+    })) : null;
+    var card = el("div", { class: "card profile" }, [
+      el("div", { class: "row-between" }, [el("h3", { text: "How we understand " + (p.name || "your brand"), style: "margin:0" }),
+        b.confirmed ? el("span", { class: "confirmed", text: "✓ Confirmed" }) : null]),
+      row("In one sentence", p.one_liner ? el("div", { text: p.one_liner }) : null),
+      row("Products", products),
+      row("Offers", list(p.offers)),
+      row("What makes it special", list(p.usps)),
+      row("Tone of voice", p.tone ? el("div", { text: p.tone + (p.address ? " · addresses customers as \u201c" + p.address + "\u201d" : "") }) : null),
+      row("Audience", p.audience ? el("div", { text: p.audience }) : null),
+      row("Colours", colors),
+      row("Fonts", (p.fonts || []).length ? el("div", { text: p.fonts.join(", ") }) : null),
+      row("Never say", list(p.never_say)),
+      (p.uncertain || []).length ? el("div", { class: "check" }, [el("b", { text: "Please check: " }), p.uncertain.join(" · ")]) : null,
+      el("div", { class: "actions" }, [
+        b.confirmed ? null : el("button", { class: "btn", text: "Looks right", onclick: function () {
+          api("POST", "/api/brand", { confirmed: true }).then(renderBrand).catch(function (e) { alert(e.message); });
+        } }),
+        el("button", { class: "btn ghost", text: "Correct something", onclick: function () { editBrand(b); } }),
+        el("button", { class: "linkbtn", text: "Analyze again", onclick: function () { renderBrand(null); } })
+      ])
+    ]);
+    box.appendChild(card);
+  }
+
+  function editBrand(b) {
+    var p = JSON.parse(JSON.stringify(b.profile)), box = $("brand"), inputs = {};
+    box.innerHTML = "";
+    var rows = TEXT_FIELDS.map(function (f) {
+      inputs[f[0]] = el("input", { class: "edit", value: p[f[0]] || "" });
+      return el("div", { class: "row" }, [el("span", { text: f[1] }), inputs[f[0]]]);
+    }).concat(LIST_FIELDS.map(function (f) {
+      inputs[f[0]] = el("textarea", { class: "edit", rows: 4 });
+      inputs[f[0]].value = (p[f[0]] || []).join("\n");
+      return el("div", { class: "row" }, [el("span", { text: f[1] + " (one per line)" }), inputs[f[0]]]);
+    }));
+    inputs.colors = el("input", { class: "edit", value: (p.colors || []).map(function (c) { return c.hex; }).join(", ") });
+    rows.push(el("div", { class: "row" }, [el("span", { text: "Colours (hex, comma separated)" }), inputs.colors]));
+    box.appendChild(el("div", { class: "card profile" }, [el("h3", { text: "Correct your brand profile", style: "margin:0" })].concat(rows).concat([
+      el("p", { class: "note", text: "Products and prices always come from your shop, so they stay correct." }),
+      el("div", { class: "actions" }, [
+        el("button", { class: "btn", text: "Save", onclick: function () {
+          TEXT_FIELDS.forEach(function (f) { p[f[0]] = inputs[f[0]].value.trim(); });
+          LIST_FIELDS.forEach(function (f) { p[f[0]] = inputs[f[0]].value.split("\n").map(function (x) { return x.trim(); }).filter(Boolean); });
+          var old = {}; (p.colors || []).forEach(function (c) { old[c.hex.toLowerCase()] = c.role; });
+          p.colors = inputs.colors.value.split(",").map(function (x) { return x.trim().toLowerCase(); })
+            .filter(function (x) { return /^#[0-9a-f]{6}$/.test(x); }).map(function (h) { return { hex: h, role: old[h] || "" }; });
+          p.uncertain = [];
+          api("POST", "/api/brand", { profile: p, confirmed: true }).then(renderBrand).catch(function (e) { alert(e.message); });
+        } }),
+        el("button", { class: "btn ghost", text: "Cancel", onclick: function () { renderBrand(b); } })
+      ])
+    ])));
+  }
+
+  function loadBrand() {
+    return api("GET", "/api/brand").then(function (b) { renderBrand(b && b.profile ? b : null); });
+  }
+
   // Content library
 
   function renderVideos() {
@@ -406,6 +499,7 @@
       state.me = me;
       show("dash");
       renderChannels();
+      loadBrand();
       loadVideos();
       loadTikTokVideos();
       loadInstagram();
