@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brandlyft</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/app/app.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="logo" href="/app/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+  <nav id="nav" hidden><span id="who" class="who"></span><a href="#" id="signout">Sign out</a></nav>
+</header>
+
+<main id="signin" class="signin" hidden>
+  <h1>Welcome to Brandlyft</h1>
+  <p class="lead">Sign in with the account of your brand. You can connect your other channels afterwards.</p>
+  <div class="stack">
+    <button class="btn wide" data-connect="tiktok"><img src="/app/tiktok.svg" alt="" width="20" height="20">Continue with TikTok</button>
+    <button class="btn wide ghost" data-connect="meta"><img src="/app/meta.svg" alt="" width="20" height="20">Continue with Facebook</button>
+  </div>
+  <p class="note">By continuing you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy Policy</a>.</p>
+</main>
+
+<main id="dash" hidden>
+  <section class="block">
+    <h2>Your channels</h2>
+    <div class="grid" id="channels"></div>
+  </section>
+
+  <section class="block">
+    <div class="row-between">
+      <h2>Your content</h2>
+      <label class="btn small">Upload video<input type="file" id="file" accept="video/mp4,video/quicktime" hidden></label>
+    </div>
+    <p class="sub">Videos created by Brandlyft or uploaded by you. Review each one and decide where it goes.</p>
+    <div id="upload-status" class="note" hidden></div>
+    <div class="grid videos" id="videos"><p class="note">Loading…</p></div>
+  </section>
+
+  <section class="block" id="tt-section" hidden>
+    <h2>Recent TikTok videos</h2>
+    <p class="sub">How your latest TikTok videos perform. Brandlyft uses this to learn what works.</p>
+    <div class="grid videos" id="tt-videos"></div>
+  </section>
+
+  <section class="block">
+    <h2>Your data</h2>
+    <p class="sub">Disconnecting a channel removes Brandlyft's access to it. Deleting your workspace removes every connection and every stored video immediately.</p>
+    <button class="btn ghost danger" id="delete-account">Delete my Brandlyft data</button>
+  </section>
+</main>
+</div>
+
+<dialog id="tt-dialog" class="sheet">
+  <form method="dialog" id="tt-form">
+    <div class="sheet-head"><h3>Post to TikTok</h3><button class="x" value="cancel" aria-label="Close">×</button></div>
+    <div id="tt-creator" class="creator"></div>
+    <div class="post-grid">
+      <video id="tt-preview" controls playsinline preload="metadata"></video>
+      <div>
+        <label class="field">Caption
+          <textarea id="tt-title" rows="5" maxlength="2200"></textarea>
+          <span class="count"><span id="tt-count">0</span> / 2200</span>
+        </label>
+        <label class="field">Who can view this video
+          <select id="tt-privacy" required><option value="" disabled selected>Select who can view</option></select>
+        </label>
+        <div class="field">Allow users to
+          <div class="checks">
+            <label><input type="checkbox" id="tt-comment"> Comment</label>
+            <label><input type="checkbox" id="tt-duet"> Duet</label>
+            <label><input type="checkbox" id="tt-stitch"> Stitch</label>
+          </div>
+          <span class="hint" id="tt-interaction-hint"></span>
+        </div>
+        <div class="field">
+          <label class="switch"><input type="checkbox" id="tt-disclose"> Disclose video content</label>
+          <div id="tt-disclose-box" hidden>
+            <p class="hint">Turn on to disclose that this video promotes goods or services in exchange for something of value. Your video could promote yourself, a third party, or both.</p>
+            <label class="opt"><input type="checkbox" id="tt-yourbrand"> <span><b>Your brand</b><br>You are promoting yourself or your own business. This video will be classified as Brand Organic.</span></label>
+            <label class="opt"><input type="checkbox" id="tt-branded"> <span><b>Branded content</b><br>You are promoting another brand or a third party. This video will be classified as Branded Content.</span></label>
+            <p class="label-note" id="tt-label-note" hidden></p>
+          </div>
+        </div>
+        <p class="hint" id="tt-duration"></p>
+        <p class="declare" id="tt-declare"></p>
+        <p class="err" id="tt-error" hidden></p>
+        <div class="actions">
+          <button type="button" class="btn" id="tt-publish" disabled>Publish to TikTok</button>
+          <button type="button" class="btn ghost" id="tt-draft">Send to TikTok drafts instead</button>
+        </div>
+        <p class="hint" id="tt-publish-hint"></p>
+        <div id="tt-result" class="result" hidden></div>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="meta-dialog" class="sheet">
+  <form method="dialog">
+    <div class="sheet-head"><h3>Post to Instagram and Facebook</h3><button class="x" value="cancel" aria-label="Close">×</button></div>
+    <div class="post-grid">
+      <video id="meta-preview" controls playsinline preload="metadata"></video>
+      <div>
+        <label class="field">Facebook Page
+          <select id="meta-page"></select>
+        </label>
+        <div class="field">Publish as Reel on
+          <div class="checks">
+            <label><input type="checkbox" id="meta-ig"> <span id="meta-ig-label">Instagram</span></label>
+            <label><input type="checkbox" id="meta-fb"> Facebook Page</label>
+          </div>
+        </div>
+        <label class="field">Caption
+          <textarea id="meta-caption" rows="6" maxlength="2200"></textarea>
+        </label>
+        <p class="err" id="meta-error" hidden></p>
+        <div class="actions"><button type="button" class="btn" id="meta-publish">Publish</button></div>
+        <div id="meta-result" class="result" hidden></div>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<script src="/app/config.js"></script>
+<script src="/app/app.js"></script>
+</body>
+</html>
