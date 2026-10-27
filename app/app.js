@@ -279,11 +279,11 @@
     var box = $("tt-result"), tries = 0;
     box.hidden = false;
     box.textContent = mode === "draft"
-      ? "Sent. Open TikTok and check your inbox notifications to finish and post the video."
+      ? "Sending your video to TikTok…"
       : "Your video is being uploaded to TikTok. It can take a few minutes until it appears on your profile.";
-    if (mode === "draft") return;
     (function tick() {
       api("GET", "/api/tiktok/status/" + encodeURIComponent(publishId)).then(function (s) {
+        if (mode === "draft" && s.status === "SEND_TO_USER_INBOX") { box.textContent = "Sent. Open the TikTok app and check your inbox notifications to finish and post the video."; return; }
         if (s.status === "PUBLISH_COMPLETE") { box.textContent = "Published to TikTok. It may take a moment until it shows on your profile."; loadVideos(); loadTikTokVideos(); return; }
         if (s.status === "FAILED") { box.textContent = "TikTok could not publish the video (" + (s.fail_reason || "unknown reason") + ")."; return; }
         box.textContent = "TikTok is processing your video… It can take a few minutes until it appears on your profile.";
