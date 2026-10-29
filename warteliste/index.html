@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warteliste · Brandlyft</title>
+<meta name="description" content="Brandlyft liest deine Website, erstellt Beiträge, Reels und Storys mit deinen echten Produkten und veröffentlicht sie auf Instagram, Facebook und TikTok. Trag dich auf die Warteliste ein.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="logo" href="/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+  <nav><a class="hide-sm" href="/#how">So funktioniert es</a><a class="hide-sm" href="/#pricing">Preise</a><a href="/app/">Anmelden</a></nav>
+</header>
+
+<main>
+<section class="hero narrow">
+  <span class="eyebrow">Warteliste</span>
+  <h1>Social Media für deine Marke, jeden Tag, ohne dass du daran sitzt.</h1>
+  <p class="lead">Du gibst deine Website ein. Brandlyft lernt deine Marke und deine Produkte, erstellt Beiträge, Reels und Storys und veröffentlicht sie auf Instagram, Facebook und TikTok. Aus den Zahlen lernt es, was wirklich ankommt.</p>
+</section>
+
+<section class="form-wrap">
+  <form id="warteliste" class="signup" novalidate>
+    <h2>Platz auf der Warteliste sichern</h2>
+    <p class="sub">Wir starten mit wenigen Betrieben und richten jeden persönlich ein. Wer früh dabei ist, bekommt besondere Konditionen.</p>
+    <label for="email">E-Mail-Adresse</label>
+    <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="du@deinbetrieb.de">
+    <label for="website">Website <span class="opt">(freiwillig)</span></label>
+    <input id="website" name="website" type="text" autocomplete="url" inputmode="url" placeholder="deinbetrieb.de">
+    <label for="branche">Branche <span class="opt">(freiwillig)</span></label>
+    <select id="branche" name="branche">
+      <option value="">Bitte wählen</option>
+      <option>Onlineshop</option><option>Immobilien</option><option>Gastronomie</option><option>Friseur oder Beauty</option>
+      <option>Handwerk</option><option>Dienstleistung</option><option>Agentur</option><option>Andere</option>
+    </select>
+    <div class="hp" aria-hidden="true"><label for="firma">Firma</label><input id="firma" name="firma" type="text" tabindex="-1" autocomplete="off"></div>
+    <label class="check"><input id="consent" name="consent" type="checkbox" required>
+      <span>Ich möchte auf die Brandlyft-Warteliste und per E-Mail erfahren, wann mein Platz frei ist und wie die Entwicklung vorangeht. Abmelden geht jederzeit. Mehr in der <a href="/datenschutz.html#warteliste">Datenschutzerklärung</a>.</span></label>
+    <button class="btn" type="submit">Eintragen</button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </form>
+  <div class="done" id="done" hidden>
+    <h2>Fast geschafft</h2>
+    <p>Wir haben dir eine Mail geschickt. Klick auf den Link darin, dann steht dein Platz fest. Keine Mail da? Schau bitte auch im Spam-Ordner nach.</p>
+  </div>
+</section>
+
+<section>
+  <div class="grid">
+    <div class="card"><div class="step">1</div><h3>Website eingeben</h3><p>Brandlyft liest Produkte, Preise, Farben, Schriften und Tonfall. Du bestätigst nur, was es verstanden hat.</p></div>
+    <div class="card"><div class="step">2</div><h3>Kanäle verbinden</h3><p>Instagram, Facebook und TikTok über die offizielle Anmeldung der Plattformen. TikTok-Videos gibst du immer selbst frei.</p></div>
+    <div class="card"><div class="step">3</div><h3>Posten und lernen</h3><p>Brandlyft plant, erstellt und veröffentlicht. Es misst Aufrufe, Zuschauzeit und Shop-Besuche und macht mehr von dem, was funktioniert.</p></div>
+  </div>
+  <p class="note">Ehrliche Regeln in jedem Beitrag: keine erfundenen Bewertungen, keine erfundenen Zahlen, keine falsche Knappheit.</p>
+</section>
+</main>
+<footer>
+  <a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a>
+  <div style="margin-top:12px">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+</footer>
+</div>
+<script src="/app/config.js"></script>
+<script src="/warteliste/warteliste.js"></script>
+</body>
+</html>
