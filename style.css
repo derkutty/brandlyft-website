@@ -74,3 +74,4 @@ footer a { color: var(--muted); margin-right: 18px; }
 .signup .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .done h2 { margin-bottom: 8px; }
 .done p { color: var(--ink-soft); margin: 0; }
+.faq { max-width: 760px; margin: 0 auto; }
