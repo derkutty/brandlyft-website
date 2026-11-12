@@ -7,6 +7,17 @@
   function session() { try { return localStorage.getItem("bl_session"); } catch (e) { return null; } }
   function setSession(v) { try { v ? localStorage.setItem("bl_session", v) : localStorage.removeItem("bl_session"); } catch (e) {} }
 
+  // Until the launch a new workspace needs an invite link (/app/?invite=CODE). Keep the code for this tab only.
+  function invite() { try { return sessionStorage.getItem("bl_invite"); } catch (e) { return null; } }
+  function setInvite(v) { try { v ? sessionStorage.setItem("bl_invite", v) : sessionStorage.removeItem("bl_invite"); } catch (e) {} }
+  (function () {
+    var q = new URLSearchParams(location.search);
+    if (!q.get("invite")) return;
+    setInvite(q.get("invite"));
+    q.delete("invite");
+    history.replaceState(null, "", location.pathname + (q.toString() ? "?" + q : "") + location.hash);
+  })();
+
   function api(method, path, body) {
     var headers = { "Content-Type": "application/json" };
     if (session()) headers.Authorization = "Bearer " + session();
@@ -40,7 +51,7 @@
   }
 
   function connect(provider) {
-    api("POST", "/api/auth/" + provider + "/start").then(function (r) { location.href = r.url; })
+    api("POST", "/api/auth/" + provider + "/start", invite() ? { invite: invite() } : null).then(function (r) { location.href = r.url; })
       .catch(function (e) { alert(e.message); });
   }
 
@@ -497,6 +508,7 @@
   function load() {
     return api("GET", "/api/me").then(function (me) {
       state.me = me;
+      setInvite(null);
       show("dash");
       renderChannels();
       loadBrand();
