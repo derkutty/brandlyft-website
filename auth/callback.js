@@ -20,9 +20,19 @@
     status.textContent = "The connection was cancelled or failed" + (q.get("error_description") ? " (" + q.get("error_description") + ")" : "") + ". You can go back and try again.";
     return;
   }
+  // The binding proves that this browser started the sign-in; a signed-in session proves who connects a channel
+  var binding = "", session = null;
+  try {
+    var saved = JSON.parse(localStorage.getItem("bl_oauth") || "{}");
+    if (saved.at && Date.now() - saved.at < 15 * 60 * 1000) binding = saved.binding || "";
+    localStorage.removeItem("bl_oauth");
+    session = localStorage.getItem("bl_session");
+  } catch (e) {}
+  var headers = { "Content-Type": "application/json" };
+  if (session) headers.Authorization = "Bearer " + session;
   fetch(window.BRANDLYFT_API + "/api/auth/" + provider + "/finish", {
-    method: "POST", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ code: q.get("code"), state: q.get("state") })
+    method: "POST", headers: headers,
+    body: JSON.stringify({ code: q.get("code"), state: q.get("state"), binding: binding })
   }).then(function (r) {
     return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || d.detail || "Connection failed"); return d; });
   }).then(function (d) {

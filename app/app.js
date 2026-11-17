@@ -56,7 +56,11 @@
   }
 
   function connect(provider) {
-    api("POST", "/api/auth/" + provider + "/start", invite() ? { invite: invite() } : null).then(function (r) { location.href = r.url; })
+    api("POST", "/api/auth/" + provider + "/start", invite() ? { invite: invite() } : null).then(function (r) {
+      // Only this browser can finish the sign-in: it keeps the binding value until the callback page sends it back
+      try { localStorage.setItem("bl_oauth", JSON.stringify({ binding: r.binding || "", at: Date.now() })); } catch (e) {}
+      location.href = r.url;
+    })
       .catch(function (e) { alert(e.message); });
   }
 
@@ -325,6 +329,8 @@
           var x = new XMLHttpRequest();
           x.open("PUT", r.upload_url);
           x.setRequestHeader("Content-Type", f.type || "video/mp4");
+          // The bucket only accepts the size range signed into the upload link
+          Object.keys(r.upload_headers || {}).forEach(function (k) { x.setRequestHeader(k, r.upload_headers[k]); });
           x.upload.onprogress = function (e) { if (e.lengthComputable) status.textContent = "Uploading… " + Math.round(e.loaded / e.total * 100) + " %"; };
           x.onload = function () { x.status < 300 ? resolve(r.id) : reject(new Error("Upload failed (" + x.status + ")")); };
           x.onerror = function () { reject(new Error("Upload failed, please check your connection")); };
