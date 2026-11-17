@@ -1,1 +1,1 @@
-window.BRANDLYFT_API = "https://brandlyft-api-51153450226.europe-west3.run.app";
+window.BRANDLYFT_API = "https://brandlyft-api-318800310726.europe-west3.run.app";
