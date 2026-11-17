@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src 'self' blob: https://storage.googleapis.com; connect-src 'self' https://brandlyft-api-51153450226.europe-west3.run.app https://storage.googleapis.com; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Connecting account · Brandlyft</title>
 <meta name="robots" content="noindex">
@@ -18,26 +19,6 @@
 </main>
 </div>
 <script src="/app/config.js"></script>
-<script>
-(function () {
-  var q = new URLSearchParams(location.search), status = document.getElementById("status");
-  // Remove the code from the address bar right away
-  history.replaceState(null, "", location.pathname);
-  if (q.get("error") || !q.get("code")) {
-    status.textContent = "The connection was cancelled or failed" + (q.get("error_description") ? " (" + q.get("error_description") + ")" : "") + ". You can go back and try again.";
-    return;
-  }
-  fetch(window.BRANDLYFT_API + "/api/auth/tiktok/finish", {
-    method: "POST", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ code: q.get("code"), state: q.get("state") })
-  }).then(function (r) {
-    return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || d.detail || "Connection failed"); return d; });
-  }).then(function (d) {
-    try { localStorage.setItem("bl_session", d.session); } catch (e) {}
-    status.textContent = "Connected. Taking you to Brandlyft…";
-    location.replace("/app/");
-  }).catch(function (e) { status.textContent = e.message; });
-})();
-</script>
+<script src="/auth/callback.js" data-provider="tiktok"></script>
 </body>
 </html>

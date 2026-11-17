@@ -71,3 +71,5 @@ dialog.sheet form { padding: 22px; }
 .profile input.edit, .profile textarea.edit { width: 100%; font: inherit; font-size: 15px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
 .confirmed { color: #2e7d32; font-weight: 600; font-size: 14px; }
 @media (max-width: 640px) { .profile .row { grid-template-columns: 1fr; gap: 4px; } }
+.flush { margin: 0; }
+.plain { text-decoration: none; color: inherit; }

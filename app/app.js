@@ -1,5 +1,10 @@
 (function () {
   "use strict";
+  // Never run inside another site's frame (clickjacking). GitHub Pages cannot send frame-ancestors.
+  if (window.top !== window.self) {
+    document.body.textContent = "For your security, Brandlyft cannot be used inside another page. Please open brandlyft.app/app directly.";
+    return;
+  }
   var API = window.BRANDLYFT_API;
   var $ = function (id) { return document.getElementById(id); };
   var state = { me: null, videos: [], creator: null, video: null };
@@ -163,7 +168,7 @@
       var i = el("i"); i.style.background = c.hex; return el("span", { class: "swatch" }, [i, c.hex + (c.role ? " · " + c.role : "")]);
     })) : null;
     var card = el("div", { class: "card profile" }, [
-      el("div", { class: "row-between" }, [el("h3", { text: "How we understand " + (p.name || "your brand"), style: "margin:0" }),
+      el("div", { class: "row-between" }, [el("h3", { class: "flush", text: "How we understand " + (p.name || "your brand") }),
         b.confirmed ? el("span", { class: "confirmed", text: "✓ Confirmed" }) : null]),
       row("In one sentence", p.one_liner ? el("div", { text: p.one_liner }) : null),
       row("Products", products),
@@ -199,7 +204,7 @@
     }));
     inputs.colors = el("input", { class: "edit", value: (p.colors || []).map(function (c) { return c.hex; }).join(", ") });
     rows.push(el("div", { class: "row" }, [el("span", { text: "Colours (hex, comma separated)" }), inputs.colors]));
-    box.appendChild(el("div", { class: "card profile" }, [el("h3", { text: "Correct your brand profile", style: "margin:0" })].concat(rows).concat([
+    box.appendChild(el("div", { class: "card profile" }, [el("h3", { class: "flush", text: "Correct your brand profile" })].concat(rows).concat([
       el("p", { class: "note", text: "Products and prices always come from your shop, so they stay correct." }),
       el("div", { class: "actions" }, [
         el("button", { class: "btn", text: "Save", onclick: function () {
@@ -260,7 +265,7 @@
       $("tt-section").hidden = false;
       if (!list.length) { box.appendChild(el("p", { class: "note", text: "No public videos yet." })); return; }
       list.forEach(function (v) {
-        box.appendChild(el("a", { class: "card vcard", href: v.share_url, target: "_blank", rel: "noopener", style: "text-decoration:none;color:inherit" }, [
+        box.appendChild(el("a", { class: "card vcard plain", href: v.share_url, target: "_blank", rel: "noopener" }, [
           el("img", { class: "cover", src: v.cover_image_url, alt: "" }),
           el("div", { class: "title", text: v.title || "TikTok video" }),
           el("div", { class: "stats" }, [
@@ -289,7 +294,7 @@
       box.innerHTML = "";
       if (!list.length) { box.appendChild(el("p", { class: "note", text: "No posts yet." })); return; }
       list.forEach(function (v) {
-        box.appendChild(el("a", { class: "card vcard", href: v.permalink, target: "_blank", rel: "noopener", style: "text-decoration:none;color:inherit" }, [
+        box.appendChild(el("a", { class: "card vcard plain", href: v.permalink, target: "_blank", rel: "noopener" }, [
           el("img", { class: "cover", src: v.image || "", alt: "" }),
           el("div", { class: "small", text: (v.type || "").replace("_", " ") + " · " + new Date(v.timestamp).toLocaleDateString("en-GB") }),
           el("div", { class: "title", text: v.caption || "Instagram post" }),

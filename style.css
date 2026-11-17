@@ -49,6 +49,9 @@ details p { color: var(--ink-soft); margin: 10px 0 0; }
 .cta .btn { background: #fff; color: var(--ink); }
 footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
 footer a { color: var(--muted); margin-right: 18px; }
+.foot-meta { margin-top: 12px; }
+.cta a.mail { color: #fff; }
+hr.sep { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
 .legal { max-width: 760px; padding: 24px 0 64px; }
 .legal h1 { font-size: 36px; text-align: left; margin: 12px 0 8px; }
 .legal h2 { font-size: 22px; margin-top: 34px; }
