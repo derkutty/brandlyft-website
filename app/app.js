@@ -138,7 +138,7 @@
     if (!b || !b.profile) {
       var input = el("input", { type: "url", placeholder: "yourbrand.com", "aria-label": "Your website" });
       var go = el("button", { class: "btn", text: "Analyze my website" });
-      var note = el("p", { class: "note", text: "Brandlyft reads your website and shop like a browser: products, prices, colours, fonts and tone of voice." });
+      var note = el("p", { class: "note", text: "Brandlyft reads your homepage, a few key pages and, for Shopify shops, the product feed: products, prices, colours, fonts and tone of voice." });
       go.addEventListener("click", function () {
         if (!input.value.trim()) { input.focus(); return; }
         go.disabled = true;
@@ -226,7 +226,7 @@
     var box = $("videos");
     box.innerHTML = "";
     if (!state.videos.length) {
-      box.appendChild(el("p", { class: "note", text: "No videos yet. Upload one or wait for the next video Brandlyft creates for you." }));
+      box.appendChild(el("p", { class: "note", text: "No videos yet. Upload your first one." }));
       return;
     }
     state.videos.forEach(function (v) {
@@ -237,7 +237,7 @@
       box.appendChild(el("div", { class: "card vcard" }, [
         el("video", { src: v.url, controls: "", playsinline: "", preload: "metadata" }),
         el("div", { class: "title", text: v.title || "Untitled video" }),
-        el("div", { class: "small", text: (v.source === "brandlyft" ? "Created by Brandlyft" : "Uploaded") + " · " + new Date(v.created * 1000).toLocaleDateString("en-GB") + (v.duration ? " · " + Math.round(v.duration) + " s" : "") }),
+        el("div", { class: "small", text: (v.source === "brandlyft" ? "Prepared by Brandlyft" : "Uploaded") + " · " + new Date(v.created * 1000).toLocaleDateString("en-GB") + (v.duration ? " · " + Math.round(v.duration) + " s" : "") }),
         posts.length ? el("div", {}, posts) : null,
         el("button", { class: "btn", onclick: function () { openTikTok(v); } }, ["Post to TikTok"]),
         el("button", { class: "btn ghost", onclick: function () { openMeta(v); } }, ["Post to Instagram / Facebook"]),
