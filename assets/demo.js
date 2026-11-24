@@ -243,7 +243,7 @@
   function show(name) {
     if (!S) return;
     S.step = name;
-    stage.setAttribute("data-step", name);
+    stage.setAttribute("data-at", name);
     $$(".step").forEach(function (s) { s.hidden = s.getAttribute("data-step") !== name; });
     var step = $("[data-step=" + name + "]");
     step.scrollTop = 0;
