@@ -3,86 +3,355 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src 'self' blob: https://storage.googleapis.com; connect-src 'self' https://brandlyft-api-318800310726.europe-west3.run.app https://storage.googleapis.com; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Brandlyft: Social Media aus deiner Website</title>
-<meta name="description" content="Brandlyft liest deine Website und lernt deine Marke. Zum Start erstellt es Beiträge, Reels und Storys mit deinen echten Produkten, veröffentlicht sie auf Instagram, Facebook und TikTok und lernt, was verkauft.">
+<meta name="description" content="Gib deine Website ein und sieh in einer Minute drei Beispielbeiträge mit deinen echten Produkten, jeder geprüft. Ohne Anmeldung. Veröffentlicht wird, was du freigibst.">
+<meta property="og:title" content="Brandlyft: Social Media aus deiner Website">
+<meta property="og:description" content="Gib deine Website ein und sieh in einer Minute drei Beispielbeiträge mit deinen echten Produkten, jeder geprüft. Ohne Anmeldung. Veröffentlicht wird, was du freigibst.">
+<meta property="og:image" content="https://brandlyft.app/assets/img/teilen.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#faf7ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15111e" media="(prefers-color-scheme: dark)">
 <link rel="alternate" hreflang="en" href="https://brandlyft.app/">
 <link rel="alternate" hreflang="de" href="https://brandlyft.app/de/">
 <link rel="alternate" hreflang="x-default" href="https://brandlyft.app/">
 <script src="/lang.js"></script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/style.css">
+<link rel="preload" href="/assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-latin-opsz-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="wrap">
 <header class="top">
-  <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
-  <nav><a class="hide-sm" href="/de/#how">So funktioniert es</a><a class="hide-sm" href="/de/#pricing">Preise</a><a href="/warteliste/">Warteliste</a><a href="/app/">Anmelden</a><a class="lang" href="/?lang=en" hreflang="en" title="English">EN</a></nav>
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+    <nav class="nav" aria-label="Brandlyft">
+      <a class="wide" href="#how">So funktioniert es</a><a class="wide" href="#pricing">Preise</a><a class="wide" href="/warteliste/">Warteliste</a><a class="pill" href="/app/">Anmelden</a><a class="lang" href="/?lang=en" hreflang="en" title="English">EN</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 <section class="hero">
-  <span class="eyebrow">Früher Zugang für Marken und Betriebe</span>
-  <h1>Social Media aus deiner Website. Veröffentlicht wird, was du freigibst.</h1>
-  <p class="lead">Du gibst deine Website ein, Brandlyft lernt deine Marke und deine Produkte. Zum Start erstellt es jeden Tag Beiträge, Reels und Storys, veröffentlicht sie nach deiner Freigabe auf Instagram, Facebook und TikTok und lernt aus den Ergebnissen, was wirklich verkauft.</p>
-  <a class="btn" href="/warteliste/">Auf die Warteliste</a><a class="btn ghost" href="#how">So funktioniert es</a>
-</section>
-
-<section id="how">
-  <h2>So funktioniert es</h2>
-  <p class="sub">Brandlyft ist im frühen Zugang. Website einlesen, Marke bestätigen, Kanäle verbinden und eigene Videos veröffentlichen geht schon heute. Ab dem offiziellen Start erstellt Brandlyft jeden Tag neue Inhalte. Du gibst jeden Beitrag frei, bevor er online geht. Ein Autopilot für Instagram und Facebook ist geplant, er wäre standardmäßig aus. Auf TikTok prüfst du jedes Video und veröffentlichst es mit deinen eigenen Einstellungen.</p>
-  <div class="grid">
-    <div class="card"><div class="step">Schritt 1</div><h3>Website eingeben</h3><p>Brandlyft liest deine Website: Produkte, Preise, Varianten, Farben, Schriften und Tonfall. Shopify-Shops werden über den Produktfeed gelesen, damit die Fakten stimmen.</p></div>
-    <div class="card"><div class="step">Schritt 2</div><h3>Marke bestätigen</h3><p>Du siehst, wie Brandlyft deine Marke verstanden hat, und korrigierst nur, was nicht passt. Deine Regeln, zum Beispiel Aussagen, die du nie machst, gelten für jeden Beitrag.</p></div>
-    <div class="card"><div class="step">Schritt 3</div><h3>Kanäle verbinden</h3><p>Du verbindest Instagram, Facebook und TikTok über die offizielle Anmeldung der Plattformen. Ab dem Start legst du fest, wie viel gepostet wird, und gibst jeden Beitrag frei. TikTok-Videos warten immer auf dich.</p></div>
-    <div class="card"><div class="step">Schritt 4</div><h3>Posten und lernen</h3><p>Ab dem Start plant, erstellt und veröffentlicht Brandlyft. Es wertet Aufrufe, Zuschauzeit und Teilen aus, testet neue Formate und steckt mehr Arbeit in das, was funktioniert.</p></div>
+  <div class="scene"><img class="drift" src="/assets/img/start-1376.webp" srcset="/assets/img/start-hoch.webp 820w, /assets/img/start-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="Gemalter Heißluftballon in Lila trägt einen kleinen Laden über eine Wiese, Papierhelfer mit lila Schal halten die Seile" width="1376" height="768" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow rise">Früher Zugang · Vorschau ohne Anmeldung</span>
+      <h1><span class="line rise d1">Social Media aus deiner Website.</span> <em class="line rise d2">Veröffentlicht wird, was du freigibst.</em></h1>
+      <p class="lead rise d3">Gib deine Website ein. Brandlyft liest deine Produkte, schreibt drei Beispielbeiträge in deinem Ton und prüft jeden davon. Das dauert etwa eine Minute.</p>
+      <form class="field rise d4" action="/warteliste/" method="get" data-demo-form novalidate>
+        <label class="sr" for="site-url">Deine Website</label>
+        <input id="site-url" name="website" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="deinshop.de" required>
+        <button class="btn violet" type="submit">Beispiele zeigen</button>
+      </form>
+      <p class="form-msg" data-demo-msg role="status" aria-live="polite"></p>
+      <p class="hint rise d4">Ohne Anmeldung. Nichts wird gepostet.</p>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Gebaut für Marken mit echten Produkten</h2>
-  <p class="sub">Die meisten KI-Werkzeuge liefern beliebige Inhalte. Brandlyft arbeitet mit deinen tatsächlichen Produkten. So entstehen deine Inhalte ab dem offiziellen Start:</p>
-  <div class="grid">
-    <div class="card"><h3>Treu zum Produkt</h3><p>Jedes Bild und jedes Video entsteht aus deinen echten Produktfotos und wird mit ihnen verglichen: Farbe, Form und Details. Keine erfundenen Produkte.</p></div>
-    <div class="card"><h3>Prüfung vor jedem Post</h3><p>Unabhängige Prüf-Agenten bewerten jedes Konzept und jeden fertigen Beitrag und zeigen dir, was ihnen auffällt. Die Entscheidung bleibt bei dir.</p></div>
-    <div class="card"><h3>Reels mit Markenfigur</h3><p>Kurze Videos mit einer Markenfigur, die in deiner Sprache spricht, lippensynchron und mit Untertiteln, als KI gekennzeichnet. Ab dem Paket Wachstum, standardmäßig aus. Ob du sie nutzt, entscheidest du.</p></div>
-    <div class="card"><h3>Ehrliche Werberegeln</h3><p>Keine erfundenen Bewertungen, keine erfundenen Zahlen, keine falsche Knappheit. Aussagen kommen nur aus deinen eigenen Produktinformationen.</p></div>
-    <div class="card"><h3>Lernen, das du siehst</h3><p>Ab dem Paket Wachstum testet Brandlyft Formate und lernt aus deinen Zahlen. Im Paket Pro zeigt dir ein Monatsbericht, was getestet wurde, was funktioniert hat und was Brandlyft daraufhin geändert hat.</p></div>
-    <div class="card"><h3>Made in Germany</h3><p>Gebaut mit europäischem Datenschutz im Blick. Unser Server, der Speicher und die KI-Auswertung laufen bei Google Cloud in der EU.</p></div>
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="kicker reveal">So funktioniert es</p>
+    <h2 class="reveal">Von der Website zum Beitrag. <em>Du behältst das letzte Wort.</em></h2>
+    <p class="sub reveal">Brandlyft ist im frühen Zugang. Website einlesen, Marke bestätigen, Kanäle verbinden und eigene Videos veröffentlichen geht schon heute. Ab dem offiziellen Start erstellt Brandlyft jeden Tag neue Inhalte, und du gibst jeden Beitrag frei, bevor er online geht.</p>
+    <div class="steps">
+      <article class="step-card reveal d1">
+        <div class="figure"><img src="/assets/img/figur-winken.webp" alt="Papierhelfer mit lila Schal winkt" width="640" height="640" loading="lazy"></div>
+        <h3>Website eingeben</h3>
+        <p>Brandlyft liest Produkte, Preise, Varianten, Farben, Schriften und Tonfall. Shopify-Shops werden über den Produktfeed gelesen, damit die Fakten stimmen.</p>
+      </article>
+      <article class="step-card reveal d2">
+        <div class="figure"><img src="/assets/img/figur-nie.webp" alt="Papierhelfer wirft eine Karte in den Papierkorb" width="640" height="640" loading="lazy"></div>
+        <h3>Marke bestätigen</h3>
+        <p>Du siehst, wie Brandlyft deine Marke verstanden hat, und korrigierst nur, was nicht passt. Deine Regeln, zum Beispiel Aussagen, die du nie machst, gelten für jeden Beitrag.</p>
+      </article>
+      <article class="step-card reveal d3">
+        <div class="figure"><img src="/assets/img/figur-jubel.webp" alt="Papierhelfer jubelt im Konfetti" width="640" height="640" loading="lazy"></div>
+        <h3>Freigeben</h3>
+        <p>Du verbindest Instagram, Facebook und TikTok über die offizielle Anmeldung der Plattformen. Ab dem Start gibst du jeden Beitrag frei. TikTok-Videos warten immer auf dich.</p>
+      </article>
+    </div>
+    <p class="note reveal">Ein Autopilot für Instagram und Facebook ist geplant. Er wäre standardmäßig aus, und nur du könntest ihn einschalten, für jeden Kanal einzeln.</p>
   </div>
 </section>
 
-<section id="pricing">
-  <h2>Preise</h2>
-  <p class="sub">Einfache Pakete nach Menge. Bilder und Videos sind enthalten, Fehlversuche zahlen wir, und du kannst monatlich kündigen.</p>
-  <div class="grid">
-    <div class="card"><h3>Start</h3><div class="price">79 € <small>/ Monat</small></div><ul><li>Instagram und Facebook</li><li>12 Beiträge, 30 Storys, 8 Videos im Monat</li><li>Freigabe jedes Beitrags</li></ul></div>
-    <div class="card featured"><h3>Wachstum</h3><div class="price">199 € <small>/ Monat</small></div><ul><li>Instagram, Facebook und TikTok</li><li>20 Beiträge, 60 Storys, 20 Videos im Monat</li><li>Formattests und Lernschleife</li><li>Eine Markenfigur</li></ul></div>
-    <div class="card"><h3>Pro</h3><div class="price">449 € <small>/ Monat</small></div><ul><li>Instagram, Facebook und TikTok</li><li>30 Beiträge, 90 Storys, 60 Videos im Monat</li><li>Drei Markenfiguren</li><li>Monatlicher Strategiebericht</li></ul></div>
+<section class="section tint">
+  <div class="wrap check-grid">
+    <div>
+      <p class="kicker reveal">Die Prüfung</p>
+      <h2 class="reveal">Jeder Beitrag wird geprüft, <em>bevor du ihn siehst.</em></h2>
+      <p class="sub reveal">Aussagen kommen nur aus deinen eigenen Produktinformationen. Was eine Regel bricht, hält Brandlyft an und sagt dir, warum. Die Entscheidung bleibt bei dir.</p>
+      <ul class="checklist reveal">
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Preise wie in deinem Shop</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Jede Zahl aus deinen Produktdaten</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Nur vorrätige Produkte</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Keine erfundenen Bewertungen</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Keine Heilversprechen</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Keine falsche Knappheit</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Anrede wie bei dir: du oder Sie</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Echte Produktfotos statt erfundener Produkte</span></li>
+      </ul>
+    </div>
+    <div class="check-art reveal d2">
+      <div class="figure"><img class="float" src="/assets/img/figur-pruefung.webp" alt="Papierhelfer prüft eine Postkarte mit der Lupe, daneben ein Stapel mit lila Haken" width="640" height="640" loading="lazy"></div>
+      <div class="sticky"><b>Angehalten</b>„Nur noch heute!“ steht nirgends in deinem Shop. Das wäre falsche Knappheit.</div>
+    </div>
   </div>
-  <p class="note">Geplante Preise für den offiziellen Start, nur für Unternehmer. Wer früh dabei ist, bekommt besondere Konditionen.</p>
 </section>
 
-<section>
-  <h2>Fragen</h2>
-  <details><summary>Postet Brandlyft ohne meine Freigabe?</summary><p>Nein. Heute veröffentlicht Brandlyft nur, was du selbst absendest. Ein Autopilot für Instagram und Facebook ist geplant: Er wäre standardmäßig aus, und nur du könntest ihn einschalten, für jeden Kanal einzeln. Auf TikTok gibt es keinen Autopiloten: Du prüfst jedes Video, legst fest, wer es sehen darf, und veröffentlichst es selbst, so verlangt es TikTok.</p></details>
-  <details><summary>Welche Plattformen gibt es?</summary><p>Zum Start Instagram, Facebook und TikTok, jeweils über die offizielle Anmeldung und Schnittstelle der Plattform. Weitere folgen.</p></details>
-  <details><summary>Was passiert mit meinen Kontodaten?</summary><p>Wir nutzen nur die Berechtigungen, die du erteilst, um deine Inhalte zu veröffentlichen und ihre Zahlen zu lesen. Deine Daten und Inhalte nutzen wir nur für deinen eigenen Arbeitsbereich, nie für andere Kunden und nie zum Training von KI-Modellen. Du kannst die Verbindung jederzeit trennen. Einzelheiten stehen in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p></details>
-  <details><summary>Werden KI-Inhalte gekennzeichnet?</summary><p>Ja, ab dem Start. Bilder und Videos, die Brandlyft mit KI erstellt, tragen eine unsichtbare, maschinenlesbare Markierung, und Brandlyft setzt die KI-Kennzeichnung von Instagram und TikTok standardmäßig. Für einzelne Inhalte, die nach deiner Prüfung nichts Echtes vortäuschen, kannst du sie abschalten, außer bei Markenfiguren und, sobald es ihn gibt, im Autopiloten.</p></details>
+<section class="section">
+  <div class="wrap">
+    <p class="kicker reveal">Gebaut für echte Produkte</p>
+    <h2 class="reveal">Gebaut für Marken <em>mit echten Produkten.</em></h2>
+    <p class="sub reveal">Die meisten KI-Werkzeuge liefern beliebige Inhalte. Brandlyft arbeitet mit deinen tatsächlichen Produkten. So entstehen deine Inhalte ab dem offiziellen Start:</p>
+    <div class="grid">
+      <article class="card reveal"><h3>Treu zum Produkt</h3><p>Jedes Bild und jedes Video entsteht aus deinen echten Produktfotos und wird mit ihnen verglichen: Farbe, Form und Details. Keine erfundenen Produkte.</p></article>
+      <article class="card reveal"><h3>Prüfung vor jedem Post</h3><p>Unabhängige Prüf-Agenten bewerten jedes Konzept und jeden fertigen Beitrag und zeigen dir, was ihnen auffällt. Die Entscheidung bleibt bei dir.</p></article>
+      <article class="card reveal"><h3>Reels mit Markenfigur</h3><p>Kurze Videos mit einer Markenfigur, die in deiner Sprache spricht, lippensynchron und mit Untertiteln, als KI gekennzeichnet. Ab dem Paket Wachstum, standardmäßig aus. Ob du sie nutzt, entscheidest du.</p></article>
+      <article class="card reveal"><h3>Ehrliche Werberegeln</h3><p>Keine erfundenen Bewertungen, keine erfundenen Zahlen, keine falsche Knappheit. Aussagen kommen nur aus deinen eigenen Produktinformationen.</p></article>
+      <article class="card reveal"><h3>Lernen, das du siehst</h3><p>Ab dem Paket Wachstum testet Brandlyft Formate und lernt aus deinen Zahlen. Im Paket Pro zeigt dir ein Monatsbericht, was getestet wurde, was funktioniert hat und was Brandlyft daraufhin geändert hat.</p></article>
+      <article class="card reveal"><h3>Made in Germany</h3><p>Gebaut mit europäischem Datenschutz im Blick. Unser Server, der Speicher und die KI-Auswertung laufen bei Google Cloud in der EU.</p></article>
+    </div>
+  </div>
 </section>
 
-<section id="access">
-  <div class="cta">
-    <h2>Früher Zugang</h2>
-    <p>Wir starten mit wenigen Betrieben. Trag dich auf die Warteliste ein, dann sagen wir dir Bescheid, sobald dein Platz frei ist. Fragen? Schreib an <a class="mail" href="mailto:hello@brandlyft.app">hello@brandlyft.app</a>.</p>
-    <a class="btn" href="/warteliste/">Auf die Warteliste</a>
+<section class="section tint" id="pricing">
+  <div class="wrap">
+    <p class="kicker reveal">Preise</p>
+    <h2 class="reveal">Einfache Pakete. <em>Monatlich kündbar.</em></h2>
+    <p class="sub reveal">Einfache Pakete nach Menge. Bilder und Videos sind enthalten, Fehlversuche zahlen wir, und du kannst monatlich kündigen.</p>
+    <div class="grid">
+      <article class="card reveal"><h3>Start</h3><div class="price">79 € <small>/ Monat</small></div><ul><li>Instagram und Facebook</li><li>12 Beiträge, 30 Storys, 8 Videos im Monat</li><li>Freigabe jedes Beitrags</li></ul></article>
+      <article class="card reveal featured"><h3>Wachstum</h3><div class="price">199 € <small>/ Monat</small></div><ul><li>Instagram, Facebook und TikTok</li><li>20 Beiträge, 60 Storys, 20 Videos im Monat</li><li>Formattests und Lernschleife</li><li>Eine Markenfigur</li></ul></article>
+      <article class="card reveal"><h3>Pro</h3><div class="price">449 € <small>/ Monat</small></div><ul><li>Instagram, Facebook und TikTok</li><li>30 Beiträge, 90 Storys, 60 Videos im Monat</li><li>Drei Markenfiguren</li><li>Monatlicher Strategiebericht</li></ul></article>
+    </div>
+    <p class="note">Geplante Preise für den offiziellen Start, nur für Unternehmer. Wer früh dabei ist, bekommt besondere Konditionen.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap faq">
+    <p class="kicker reveal">Fragen</p>
+    <h2 class="reveal">Was du wissen <em>solltest.</em></h2>
+      <details><summary>Postet Brandlyft ohne meine Freigabe?</summary><p>Nein. Heute veröffentlicht Brandlyft nur, was du selbst absendest. Ein Autopilot für Instagram und Facebook ist geplant: Er wäre standardmäßig aus, und nur du könntest ihn einschalten, für jeden Kanal einzeln. Auf TikTok gibt es keinen Autopiloten: Du prüfst jedes Video, legst fest, wer es sehen darf, und veröffentlichst es selbst, so verlangt es TikTok.</p></details>
+      <details><summary>Was passiert mit meiner Website in der Vorschau?</summary><p>Brandlyft liest nur öffentliche Seiten deiner Website, so wie ein Besucher, und hält sich an die robots.txt. Das Ergebnis speichern wir 7 Tage, damit dieselbe Website nicht doppelt ausgewertet wird. Gepostet wird nichts. Einzelheiten stehen in der <a href="/datenschutz.html#vorschau">Datenschutzerklärung</a>.</p></details>
+      <details><summary>Welche Plattformen gibt es?</summary><p>Zum Start Instagram, Facebook und TikTok, jeweils über die offizielle Anmeldung und Schnittstelle der Plattform. Weitere folgen.</p></details>
+      <details><summary>Was passiert mit meinen Kontodaten?</summary><p>Wir nutzen nur die Berechtigungen, die du erteilst, um deine Inhalte zu veröffentlichen und ihre Zahlen zu lesen. Deine Daten und Inhalte nutzen wir nur für deinen eigenen Arbeitsbereich, nie für andere Kunden und nie zum Training von KI-Modellen. Du kannst die Verbindung jederzeit trennen. Einzelheiten stehen in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p></details>
+      <details><summary>Werden KI-Inhalte gekennzeichnet?</summary><p>Ja, ab dem Start. Bilder und Videos, die Brandlyft mit KI erstellt, tragen eine unsichtbare, maschinenlesbare Markierung, und Brandlyft setzt die KI-Kennzeichnung von Instagram und TikTok standardmäßig. Für einzelne Inhalte, die nach deiner Prüfung nichts Echtes vortäuschen, kannst du sie abschalten, außer bei Markenfiguren und, sobald es ihn gibt, im Autopiloten.</p></details>
+  </div>
+</section>
+
+<section class="finale" id="access">
+  <div class="scene"><img class="drift" src="/assets/img/hoch-oben-1376.webp" srcset="/assets/img/hoch-oben-hoch.webp 820w, /assets/img/hoch-oben-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="Der Ballon mit dem Laden schwebt über den Wolken im Sonnenaufgang, die Papierhelfer jubeln" width="1376" height="768" loading="lazy"></div>
+  <div class="wrap">
+    <h2 class="reveal">Sieh dir an, was Brandlyft <em>aus deiner Website macht.</em></h2>
+    <p class="reveal">Drei Beispielbeiträge mit deinen echten Produkten, jeder mit Prüfbericht. Danach entscheidest du, ob du auf die Warteliste willst.</p>
+    <form class="field reveal" action="/warteliste/" method="get" data-demo-form novalidate>
+      <label class="sr" for="site-url-2">Deine Website</label>
+      <input id="site-url-2" name="website" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="deinshop.de" required>
+      <button class="btn violet" type="submit">Beispiele zeigen</button>
+    </form>
+    <p class="form-msg" data-demo-msg role="status" aria-live="polite"></p>
+    <p class="also">Lieber gleich eintragen? <a href="/warteliste/">Zur Warteliste</a> · Fragen? <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></p>
   </div>
 </section>
 </main>
-<footer>
-  <a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a>
-  <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="26" height="26">Brandlyft</a>
+    <div class="foot-links"><a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a></div>
+    <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+  </div>
 </footer>
+
+<div class="stage" id="demo" role="dialog" aria-modal="true" aria-labelledby="demo-title" hidden>
+  <div class="stage-top">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="28" height="28">Brandlyft</a>
+    <span class="stage-site" data-host-pill hidden></span>
+    <button class="close" type="button" data-close aria-label="Vorschau schließen"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  </div>
+  <h2 class="sr" id="demo-title">Vorschau deiner Beiträge</h2>
+
+  <section class="step has-scene" data-step="read" hidden>
+    <div class="step-in">
+      <div class="scene"><img class="drift" src="/assets/img/lesen-1376.webp" srcset="/assets/img/lesen-hoch.webp 820w, /assets/img/lesen-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="Papierhelfer erkunden die Regale eines Ladens mit Lupe, Leiter und Farbfächer" width="1376" height="768" loading="lazy"></div>
+      <div class="step-wrap">
+        <div class="panel">
+          <p class="label">Brandlyft liest</p>
+          <h3 class="big-typed typed" data-type tabindex="-1">Ich schau mir <em data-host>deine Website</em> an …</h3>
+          <div class="finds">
+            <div class="find wide" data-find="site"><b>Deine Seite</b><span class="wait pulse">wird gelesen …</span></div>
+            <div class="find" data-find="products"><b>Produkte</b><span class="wait pulse">suche …</span></div>
+            <div class="find" data-find="colors"><b>Farben</b><span class="wait pulse">suche …</span></div>
+            <div class="find" data-find="fonts"><b>Schrift</b><span class="wait pulse">suche …</span></div>
+            <div class="find" data-find="tone"><b>Dein Ton</b><span class="wait pulse">kommt gleich …</span></div>
+          </div>
+          <button class="btn violet" type="button" data-next disabled>Weiter zu den Fragen</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" data-step="q1" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img class="float" src="/assets/img/figur-du-sie.webp" alt="Zwei Papierhelfer, einer winkt locker, einer verbeugt sich mit Zylinder" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Frage 1 von 3, während Brandlyft liest</span>
+        <h2 class="h-q" tabindex="-1">Wie sprichst du deine <em>Kunden</em> an?</h2>
+        <div class="choices two">
+          <button class="choice" type="button" data-address="informal" aria-pressed="false"><span class="big">Du</span><span class="small">„Schön, dass du da bist.“</span></button>
+          <button class="choice" type="button" data-address="formal" aria-pressed="false"><span class="big">Sie</span><span class="small">„Schön, dass Sie da sind.“</span></button>
+        </div>
+        <p class="aside" data-address-hint hidden></p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="step" data-step="q2" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img class="float" src="/assets/img/figur-nie.webp" alt="Papierhelfer wirft eine Karte in den Papierkorb" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Frage 2 von 3</span>
+        <h2 class="h-q" tabindex="-1">Was würdest du <em>nie</em> sagen?</h2>
+        <div class="pills">
+            <button class="pill-btn" type="button" data-never="discount_shouting" aria-pressed="false">Rabatt-Geschrei</button>
+            <button class="pill-btn" type="button" data-never="health_claims" aria-pressed="false">Heilversprechen</button>
+            <button class="pill-btn" type="button" data-never="jargon" aria-pressed="false">Fachchinesisch</button>
+            <button class="pill-btn" type="button" data-never="emojis" aria-pressed="false">Emojis</button>
+            <button class="pill-btn" type="button" data-never="competitors" aria-pressed="false">Konkurrenz schlechtmachen</button>
+            <button class="pill-btn" type="button" data-never="pressure" aria-pressed="false">Druck wie „nur heute“</button>
+        </div>
+        <button class="btn violet" type="button" data-next>Weiter</button>
+        <p class="aside">Heilversprechen und falsche Knappheit prüft Brandlyft ohnehin bei jedem Beitrag.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="step" data-step="q3" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img class="float" src="/assets/img/figur-wie-oft.webp" alt="Papierhelfer mit Kalender auf einem Stapel Postkarten" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Frage 3 von 3</span>
+        <h2 class="h-q" tabindex="-1">Wie oft soll <em>gepostet</em> werden?</h2>
+        <div class="choices rows">
+            <button class="choice" type="button" data-frequency="3_week" aria-pressed="false"><span class="big">3-mal pro Woche</span><span class="small">gut zum Start</span></button>
+            <button class="choice" type="button" data-frequency="daily" aria-pressed="false"><span class="big">Jeden Tag</span><span class="small">ein Beitrag oder Reel</span></button>
+            <button class="choice" type="button" data-frequency="twice_daily" aria-pressed="false"><span class="big">Zweimal am Tag</span><span class="small">Beitrag und Story</span></button>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="step has-scene" data-step="kjell" hidden>
+    <div class="step-in">
+      <div class="scene"><img class="drift" src="/assets/img/aufstieg-1376.webp" srcset="/assets/img/aufstieg-hoch.webp 820w, /assets/img/aufstieg-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="Der Ballon mit dem Laden steigt über die Bäume, die Inhaberin winkt aus der Tür" width="1376" height="768" loading="lazy"></div>
+      <div class="step-wrap">
+        <div class="panel">
+          <div class="me"><span class="avatar" aria-hidden="true">K</span><div><b>Kjell Kuttler</b><div class="who">Gründer von Brandlyft</div></div></div>
+          <h3 class="big-typed typed" data-type tabindex="-1">Hi, ich bin Kjell.</h3>
+          <p>Ich habe Brandlyft zuerst für meinen eigenen Shop gebaut. Gerade schreibt Brandlyft deine Beiträge und prüft jeden einzelnen.</p>
+          <p>Vorher eine kurze Übung: So sortierst du aus, was nicht stimmt.</p>
+          <button class="btn violet" type="button" data-next>Zur Übung</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" data-step="practice" hidden>
+    <div class="step-in"><div class="step-wrap duo">
+      <div>
+        <span class="qno">Übung</span>
+        <h2 class="h-q" tabindex="-1">Was nicht stimmt, <em>fliegt raus.</em></h2>
+        <p class="lead" data-practice-lead>Die Prüfung hat diesen Entwurf angehalten. Wisch ihn nach links weg oder tipp auf ✕.</p>
+        <div data-practice-done hidden>
+          <p class="done-line">Genau so. <em data-done-em>Deine echten Beiträge sind gleich da.</em></p>
+          <button class="btn violet" type="button" data-to-stack>Beiträge ansehen</button>
+        </div>
+        <div class="figure mini"><img class="float" data-practice-figure src="/assets/img/figur-pruefung.webp" alt="Papierhelfer prüft mit der Lupe" width="640" height="640" loading="lazy"></div>
+      </div>
+      <div class="deck practice-card" data-practice-deck></div>
+    </div></div>
+  </section>
+
+  <section class="step" data-step="wait" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img class="float" src="/assets/img/figur-warten.webp" alt="Papierhelfer trinkt Tee auf einem Sandsack" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Gleich geschafft</span>
+        <h2 class="h-q" tabindex="-1">Brandlyft schreibt und <em>prüft</em> deine Beiträge.</h2>
+        <p class="lead">Das dauert meist nur noch ein paar Sekunden.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="step" data-step="stack" hidden>
+    <div class="step-in"><div class="step-wrap trio">
+      <div class="intro">
+        <h2 class="h-stack" tabindex="-1">Deine ersten Beiträge. <em>Gib frei, was dir gefällt.</em></h2>
+        <div class="queue" data-queue></div>
+      </div>
+      <div>
+        <div class="deck" data-deck></div>
+        <div class="decide">
+          <button class="round no" type="button" data-decide="no" aria-label="Aussortieren"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
+          <button class="round yes" type="button" data-decide="yes" aria-label="Freigeben"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <p class="howto">Wischen oder tippen. Veröffentlicht wird nichts.</p>
+      </div>
+      <aside class="side-report">
+        <p class="label">Prüfbericht zu diesem Beitrag</p>
+        <ul data-side-list></ul>
+        <div class="figure side-figure"><img class="float" src="/assets/img/figur-pruefung.webp" alt="" width="640" height="640" loading="lazy"></div>
+      </aside>
+    </div></div>
+  </section>
+
+  <section class="step has-scene" data-step="week" hidden>
+    <div class="confetti" data-confetti></div>
+    <div class="step-in">
+      <div class="scene"><img class="drift" src="/assets/img/hoch-oben-1376.webp" srcset="/assets/img/hoch-oben-hoch.webp 820w, /assets/img/hoch-oben-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="Der Ballon schwebt über den Wolken im Sonnenaufgang" width="1376" height="768" loading="lazy"></div>
+      <div class="step-wrap">
+        <div class="panel">
+          <h2 class="h-end" tabindex="-1">So sähe deine <em>Woche</em> aus.</h2>
+          <div class="week" data-week></div>
+          <p class="tally" data-tally></p>
+          <form class="end-form" data-end-form novalidate>
+            <label class="sr" for="end-email">E-Mail-Adresse</label>
+            <div class="row-in"><input id="end-email" type="email" autocomplete="email" inputmode="email" placeholder="du@deinshop.de" required><button class="btn violet" type="submit">Platz sichern</button></div>
+            <label class="check"><input type="checkbox" data-consent required><span>Ich möchte auf die Brandlyft-Warteliste und per E-Mail erfahren, wann mein Platz frei ist und wie die Entwicklung vorangeht. Abmelden geht jederzeit.</span></label>
+            <div class="hp" aria-hidden="true"><input type="text" tabindex="-1" autocomplete="off" data-hp></div>
+            <p class="fine">Dein Markenprofil und deine Antworten aus dieser Vorschau speichern wir mit deiner Adresse, damit du später nicht neu anfangen musst. Mehr in der <a href="/datenschutz.html#vorschau">Datenschutzerklärung</a>.</p>
+            <p class="msg" data-end-msg role="status" aria-live="polite"></p>
+          </form>
+          <div class="thanks" data-thanks hidden><div class="figure"><img src="/assets/img/figur-jubel-160.webp" alt="" width="160" height="160" loading="lazy"></div><span>Fast geschafft: Wir haben dir eine Mail geschickt. Klick auf den Link darin, dann steht dein Platz fest.</span></div>
+          <button class="link again" type="button" data-restart>Andere Website ausprobieren</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" data-step="error" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img src="/assets/img/figur-nie.webp" alt="Papierhelfer wirft eine Karte in den Papierkorb" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Vorschau</span>
+        <h2 class="h-q" tabindex="-1">Das hat nicht <em>geklappt.</em></h2>
+        <p class="lead" data-error-text></p>
+        <div class="btn-row"><button class="btn violet" type="button" data-restart>Andere Website eingeben</button><a class="btn ghost" href="/warteliste/">Auf die Warteliste</a></div>
+      </div>
+    </div></div>
+  </section>
+
+  <div class="progress" data-progress hidden role="status" aria-live="polite">
+    <div class="figure"><img src="/assets/img/figur-warten-160.webp" alt="" width="160" height="160" loading="lazy"></div>
+    <div class="p-body"><div class="p-t" data-p-title></div><div class="p-s" data-p-sub></div><div class="bar"><i data-p-bar></i></div></div>
+  </div>
 </div>
+
+<script src="/app/config.js"></script>
+<script src="/assets/site.js"></script>
+<script src="/assets/demo.js"></script>
 </body>
 </html>

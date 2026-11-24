@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src 'self' blob: https://storage.googleapis.com; connect-src 'self' https://brandlyft-api-318800310726.europe-west3.run.app https://storage.googleapis.com; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Datenschutzerklärung · Brandlyft</title>
 <meta name="description" content="Datenschutzerklärung von Brandlyft">
 <link rel="alternate" hreflang="en" href="https://brandlyft.app/privacy.html">
@@ -11,18 +11,20 @@
 <link rel="alternate" hreflang="x-default" href="https://brandlyft.app/privacy.html">
 <script src="/lang.js"></script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="wrap">
 <header class="top">
-  <a class="logo" href="/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
-  <nav><a class="hide-sm" href="/de/#how">So funktioniert es</a><a class="hide-sm" href="/de/#pricing">Preise</a><a href="/warteliste/">Warteliste</a><a class="lang" href="/privacy.html?lang=en" hreflang="en" title="English">EN</a></nav>
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+    <nav class="nav" aria-label="Brandlyft"><a class="wide" href="/de/#how">So funktioniert es</a><a class="wide" href="/de/#pricing">Preise</a><a class="wide" href="/warteliste/">Warteliste</a><a class="pill" href="/app/">Anmelden</a><a class="lang" href="/privacy.html?lang=en" hreflang="en" title="English">EN</a></nav>
+  </div>
 </header>
-<main class="legal">
+<main class="page">
+<div class="wrap legal">
 
 <h1>Datenschutzerklärung</h1>
-<p>Stand: 12. November 2026</p>
+<p class="stand">Stand: 24. November 2026</p>
 <p>Diese Erklärung beschreibt, wie Brandlyft personenbezogene Daten beim Besuch dieser Website und bei der Nutzung des Dienstes verarbeitet. Eine englische Fassung findest du unter <a href="/privacy.html">Privacy Policy</a>.</p>
 <h2>1. Verantwortlicher</h2>
 <p>Kjell Kuttler, Brandlyft, Richard-Zanders-Straße 53, 51469 Bergisch Gladbach, Deutschland. E-Mail: <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a>.</p>
@@ -44,7 +46,7 @@
 <h2>6. Daten von Meta und TikTok</h2>
 <p>Wir fragen nur die Berechtigungen an, die für die genutzten Funktionen nötig sind: grundlegende Kontoinformationen, deine Facebook-Seiten und das damit verknüpfte Instagram-Konto, das Veröffentlichen von Videos (auf Instagram und Facebook als Reel, auf TikTok als Beitrag oder als Entwurf in deinem TikTok-Konto) sowie Statistiken deiner letzten Beiträge. Die Statistiken zeigen wir dir an, speichern sie aber nicht. Veröffentlicht wird nur, wenn du einen Beitrag in der App absendest. Wir verkaufen diese Daten nicht, bilden daraus keine Werbeprofile und geben sie nur an die unten genannten Dienstleister weiter. Daten von TikTok nutzen wir nach den TikTok Developer Terms of Service, Daten von Meta nach den Meta Platform Terms. Die Zugangsschlüssel liegen in unserem Speicher bei Google Cloud in der EU, den Google standardmäßig verschlüsselt. Die App in deinem Browser erhält sie nie. Trennst du ein Konto in Brandlyft, widerrufen wir den Zugangsschlüssel bei der Plattform, löschen ihn bei uns und verarbeiten keine Daten dieses Kontos mehr.</p>
 <h2>7. Dienstleister</h2>
-<p>Google Cloud (Server über Cloud Run in Frankfurt, Speicher über Cloud Storage in der EU, Server-Protokolle sowie das KI-Modell Gemini für das Markenprofil über den EU-Endpunkt), GitHub, Inc. (Bereitstellung von Website und App-Oberfläche, automatisierte Abläufe), Meta Platforms Ireland Ltd. und TikTok Technology Ltd. (Anmeldung, Veröffentlichen und Statistiken über ihre offiziellen Schnittstellen), STRATO AG (Domain und E-Mail), Sendinblue SAS (Brevo, Frankreich, Versand der Mails zur Warteliste). Übermittlungen außerhalb der EU stützen sich auf Angemessenheitsbeschlüsse oder Standardvertragsklauseln.</p>
+<p>Google Cloud (Server über Cloud Run in Frankfurt, Speicher über Cloud Storage in der EU, Server-Protokolle sowie das KI-Modell Gemini für das Markenprofil und die Website-Vorschau über den EU-Endpunkt), GitHub, Inc. (Bereitstellung von Website und App-Oberfläche, automatisierte Abläufe), Meta Platforms Ireland Ltd. und TikTok Technology Ltd. (Anmeldung, Veröffentlichen und Statistiken über ihre offiziellen Schnittstellen), STRATO AG (Domain und E-Mail), Sendinblue SAS (Brevo, Frankreich, Versand der Mails zur Warteliste). Übermittlungen außerhalb der EU stützen sich auf Angemessenheitsbeschlüsse oder Standardvertragsklauseln.</p>
 <h2>8. Speicherdauer</h2>
 <p>Dein Konto, die Verbindungen, das Markenprofil und deine Videos speichern wir, bis du sie oder deinen Arbeitsbereich löschst (Abschnitt 10). Endet die Zusammenarbeit mit deinem Betrieb, löschen wir diese Daten spätestens 30 Tage danach, soweit keine gesetzlichen Aufbewahrungspflichten bestehen. Server-Protokolle werden nach 30 Tagen gelöscht.</p>
 <h2>9. Deine Rechte</h2>
@@ -58,11 +60,18 @@
 </ol>
 <p>Kopien in Server-Protokollen und gelöschte Dateien, die unser Speicher kurz zur Wiederherstellung aufbewahrt, verschwinden nach spätestens 30 Tagen. Beiträge, die du schon veröffentlicht hast, liegen bei der Plattform, dort löschst du sie in deinem Konto. Daten, die wir gesetzlich aufbewahren müssen, löschen wir nach Ablauf der Frist.</p>
 
-</main>
-<footer>
-  <a href="/imprint.html">Imprint / Impressum</a><a href="/privacy.html">Privacy Policy</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a>
-  <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach, Germany · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
-</footer>
+<h2 id="vorschau">11. Website-Vorschau</h2>
+<p>Auf der Startseite kannst du ohne Anmeldung eine Vorschau starten. Dafür gibst du die Adresse einer Website ein. Unser Server ruft dann öffentliche Seiten dieser Website ab, so wie beim Markenprofil beschrieben (Abschnitt 5: Startseite, einige Unterseiten, bei Shopify-Shops der öffentliche Produkt-Feed), und beachtet dabei die robots.txt der Website. Ein KI-Modell von Google (Gemini, über den EU-Endpunkt, die Daten bleiben dabei in der EU) schreibt daraus ein Markenprofil und Beispielbeiträge. Deine Antworten auf die drei Fragen (Anrede, was du nie sagen würdest, wie oft gepostet werden soll) fließen in die Beispiele ein. Veröffentlicht wird nichts.</p>
+<p>Das Ergebnis speichern wir ohne Bezug zu deiner Person 7 Tage in unserem Speicher bei Google Cloud in der EU, damit dieselbe Website nicht doppelt ausgewertet wird, und löschen es danach. Um Missbrauch und Kosten zu begrenzen, zählt unser Server, wie viele Vorschauen von einer IP-Adresse am selben Tag gestartet werden. Die IP-Adresse hält er dafür nur im Arbeitsspeicher, höchstens 24 Stunden, und schreibt sie nirgends hin. Wie bei jedem Aufruf unseres Servers erscheint sie außerdem in den Server-Protokollen, die nach 30 Tagen gelöscht werden. Rechtsgrundlage ist unser berechtigtes Interesse, dir die Vorschau anzubieten und sie vor Missbrauch zu schützen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<p>Während der Vorschau lädt dein Browser Produktbilder direkt von der eingegebenen Website. Deren Anbieter erhält dabei deine IP-Adresse. Trägst du dich am Ende der Vorschau auf die Warteliste ein, speichern wir das Markenprofil und deine Antworten zusammen mit deinem Eintrag (Abschnitt 4), damit du in der App nicht neu anfangen musst, und löschen sie mit ihm.</p>
 </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="26" height="26">Brandlyft</a>
+    <div class="foot-links"><a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a></div>
+    <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+  </div>
+</footer>
 </body>
 </html>

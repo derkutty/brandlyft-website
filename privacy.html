@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src 'self' blob: https://storage.googleapis.com; connect-src 'self' https://brandlyft-api-318800310726.europe-west3.run.app https://storage.googleapis.com; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy Policy · Brandlyft</title>
 <meta name="description" content="How Brandlyft processes personal data">
 <link rel="alternate" hreflang="en" href="https://brandlyft.app/privacy.html">
@@ -11,18 +11,20 @@
 <link rel="alternate" hreflang="x-default" href="https://brandlyft.app/privacy.html">
 <script src="/lang.js"></script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="wrap">
 <header class="top">
-  <a class="logo" href="/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
-  <nav><a class="hide-sm" href="/#how">How it works</a><a class="hide-sm" href="/#pricing">Pricing</a><a href="/#access">Early access</a><a class="lang" href="/datenschutz.html?lang=de" hreflang="de" title="Deutsch">DE</a></nav>
+  <div class="wrap">
+    <a class="logo" href="/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+    <nav class="nav" aria-label="Brandlyft"><a class="wide" href="/#how">How it works</a><a class="wide" href="/#pricing">Pricing</a><a class="wide" href="/waitlist/">Waitlist</a><a class="pill" href="/app/">Sign in</a><a class="lang" href="/datenschutz.html?lang=de" hreflang="de" title="Deutsch">DE</a></nav>
+  </div>
 </header>
-<main class="legal">
+<main class="page">
+<div class="wrap legal">
 
 <h1>Privacy Policy</h1>
-<p>Last updated: 12 November 2026</p>
+<p class="stand">Last updated: 24 November 2026</p>
 <p>This policy explains how Brandlyft (“we”, “us”) processes personal data when you visit this website and when you use the Brandlyft service. A German version is available as <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
 
 <h2>1. Controller</h2>
@@ -58,7 +60,7 @@
 
 <h2>7. Service providers</h2>
 <ul>
-<li><strong>Google Cloud</strong> (Google Ireland Ltd. / Google LLC): server (Cloud Run in Frankfurt), storage (Cloud Storage in the EU), server logs, and the AI model Gemini for the brand profile through the EU endpoint.</li>
+<li><strong>Google Cloud</strong> (Google Ireland Ltd. / Google LLC): server (Cloud Run in Frankfurt), storage (Cloud Storage in the EU), server logs, and the AI model Gemini for the brand profile and the website preview through the EU endpoint.</li>
 <li><strong>GitHub</strong> (GitHub, Inc., USA): hosting of this website and the app interface, and automated processes.</li>
 <li><strong>Meta Platforms Ireland Ltd.</strong> and <strong>TikTok Technology Ltd.</strong> (Ireland): sign-in, publishing and statistics through their official APIs.</li>
 <li><strong>STRATO AG</strong> (Germany): domain and e-mail.</li>
@@ -81,11 +83,18 @@
 </ol>
 <p>Copies in server logs and deleted files that our storage keeps briefly for recovery are removed after 30 days at the latest. Posts you have already published stay on the platform, where you can delete them in your account.</p>
 
-</main>
-<footer>
-  <a href="/imprint.html">Imprint / Impressum</a><a href="/privacy.html">Privacy Policy</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a>
-  <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach, Germany · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
-</footer>
+<h2 id="preview">11. Website preview</h2>
+<p>On the start page you can start a preview without signing up. You enter the address of a website. Our server then fetches public pages of that website as described for the brand profile (section 5: home page, a few sub-pages and, for Shopify shops, the public product feed) and respects the website's robots.txt. An AI model by Google (Gemini, through the EU endpoint; the data stays in the EU) writes a brand profile and example posts from it. Your answers to the three questions (form of address, what you would never say, how often to post) shape the examples. Nothing is published.</p>
+<p>We keep the result, without any link to you as a person, for 7 days in our storage at Google Cloud in the EU so that the same website is not analysed twice, and delete it afterwards. To limit abuse and costs, our server counts how many previews are started from one IP address on the same day. For this it keeps the IP address only in memory, for at most 24 hours, and does not write it anywhere. As with every request to our server, it also appears in the server logs, which are deleted after 30 days. The legal basis is our legitimate interest in offering the preview and protecting it from abuse (Art. 6(1)(f) GDPR).</p>
+<p>During the preview your browser loads product images directly from the website you entered, whose provider receives your IP address. If you join the waitlist at the end of the preview, we keep the brand profile and your answers with your entry (section 4) so you do not have to start over in the app, and delete them together with it.</p>
 </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="/"><img src="/logo.svg" alt="" width="26" height="26">Brandlyft</a>
+    <div class="foot-links"><a href="/imprint.html">Imprint / Impressum</a><a href="/privacy.html">Privacy Policy</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a></div>
+    <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach, Germany · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+  </div>
+</footer>
 </body>
 </html>

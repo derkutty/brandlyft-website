@@ -3,86 +3,355 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src 'self' blob: https://storage.googleapis.com; connect-src 'self' https://brandlyft-api-318800310726.europe-west3.run.app https://storage.googleapis.com; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Brandlyft: social media from your website</title>
-<meta name="description" content="Brandlyft reads your website and learns your brand. At launch it creates posts, reels and stories with your real products, publishes them to Instagram, Facebook and TikTok and learns what sells.">
+<meta name="description" content="Enter your website and see three example posts with your real products in about a minute, each one checked. No sign-up. Only what you approve goes live.">
+<meta property="og:title" content="Brandlyft: social media from your website">
+<meta property="og:description" content="Enter your website and see three example posts with your real products in about a minute, each one checked. No sign-up. Only what you approve goes live.">
+<meta property="og:image" content="https://brandlyft.app/assets/img/teilen.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#faf7ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15111e" media="(prefers-color-scheme: dark)">
 <link rel="alternate" hreflang="en" href="https://brandlyft.app/">
 <link rel="alternate" hreflang="de" href="https://brandlyft.app/de/">
 <link rel="alternate" hreflang="x-default" href="https://brandlyft.app/">
 <script src="/lang.js"></script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/style.css">
+<link rel="preload" href="/assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-latin-opsz-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="wrap">
 <header class="top">
-  <a class="logo" href="/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
-  <nav><a class="hide-sm" href="/#how">How it works</a><a class="hide-sm" href="/#pricing">Pricing</a><a href="/#access">Early access</a><a href="/app/">Sign in</a><a class="lang" href="/de/?lang=de" hreflang="de" title="Deutsch">DE</a></nav>
+  <div class="wrap">
+    <a class="logo" href="/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+    <nav class="nav" aria-label="Brandlyft">
+      <a class="wide" href="#how">How it works</a><a class="wide" href="#pricing">Pricing</a><a class="wide" href="/waitlist/">Waitlist</a><a class="pill" href="/app/">Sign in</a><a class="lang" href="/de/?lang=de" hreflang="de" title="Deutsch">DE</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 <section class="hero">
-  <span class="eyebrow">Early access for e-commerce brands</span>
-  <h1>Social media from your website. Only what you approve goes live.</h1>
-  <p class="lead">Paste your website and Brandlyft learns your brand and products. At launch it creates posts, reels and stories every day, publishes them to Instagram, Facebook and TikTok once you approve, and learns from the results what actually sells.</p>
-  <a class="btn" href="#access">Request early access</a><a class="btn ghost" href="#how">See how it works</a>
-</section>
-
-<section id="how">
-  <h2>How it works</h2>
-  <p class="sub">Brandlyft is in early access. Reading your website, confirming your brand, connecting your channels and publishing your own videos work today. From the public launch, Brandlyft creates new content every day. You approve each post before it goes live. An autopilot for Instagram and Facebook is planned and would be off by default. On TikTok you review each video and publish it with your own settings.</p>
-  <div class="grid">
-    <div class="card"><div class="step">Step 1</div><h3>Paste your website</h3><p>Brandlyft reads your website: products, prices, variants, colours, fonts and tone of voice. Shopify shops are read from the product feed, so facts stay correct.</p></div>
-    <div class="card"><div class="step">Step 2</div><h3>Confirm your brand</h3><p>You see how Brandlyft understood your brand and correct only what is wrong. Your rules, for example claims you never make, are respected in every post.</p></div>
-    <div class="card"><div class="step">Step 3</div><h3>Connect your channels</h3><p>Connect Instagram, Facebook and TikTok with the official login of each platform. From launch you choose how much to post and approve each post. TikTok videos always wait for your review.</p></div>
-    <div class="card"><div class="step">Step 4</div><h3>Publish and learn</h3><p>From launch, Brandlyft plans, creates and publishes. It analyses views, watch time and shares, tests new formats and puts more effort into what works.</p></div>
+  <div class="scene"><img class="drift" src="/assets/img/start-1376.webp" srcset="/assets/img/start-hoch.webp 820w, /assets/img/start-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="Painted purple hot-air balloon carrying a small shop over a meadow, paper helpers with purple scarves holding the ropes" width="1376" height="768" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow rise">Early access · Preview without sign-up</span>
+      <h1><span class="line rise d1">Social media from your website.</span> <em class="line rise d2">Only what you approve goes live.</em></h1>
+      <p class="lead rise d3">Enter your website. Brandlyft reads your products, writes three example posts in your tone of voice and checks each one. It takes about a minute.</p>
+      <form class="field rise d4" action="/waitlist/" method="get" data-demo-form novalidate>
+        <label class="sr" for="site-url">Your website</label>
+        <input id="site-url" name="website" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="yourshop.com" required>
+        <button class="btn violet" type="submit">Show examples</button>
+      </form>
+      <p class="form-msg" data-demo-msg role="status" aria-live="polite"></p>
+      <p class="hint rise d4">No sign-up. Nothing gets posted.</p>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Built for brands that sell real products</h2>
-  <p class="sub">Most AI tools produce generic content. Brandlyft is built around your actual products. This is how your content is made from the public launch:</p>
-  <div class="grid">
-    <div class="card"><h3>True to your product</h3><p>Every image and video is generated from your real product photos and checked against them: colour, shape and details. No invented products.</p></div>
-    <div class="card"><h3>Review before every post</h3><p>Independent review agents score every concept and every finished post and show you what they notice. The decision stays with you.</p></div>
-    <div class="card"><h3>Reels with characters</h3><p>Short videos with a brand character that speaks in your language, lip-synced, with subtitles, labelled as AI. From the Growth plan, off by default. Whether you use it is up to you.</p></div>
-    <div class="card"><h3>Honest marketing rules</h3><p>No fake reviews, no invented statistics, no false scarcity. Claims come only from your own product information.</p></div>
-    <div class="card"><h3>A learning loop you can see</h3><p>From the Growth plan, Brandlyft tests formats and learns from your numbers. On the Pro plan a monthly report shows what was tested, what worked and what Brandlyft changed as a result.</p></div>
-    <div class="card"><h3>Made in Germany</h3><p>Built with European data protection in mind. Our server, storage and AI analysis run on Google Cloud in the EU.</p></div>
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="kicker reveal">How it works</p>
+    <h2 class="reveal">From your website to a post. <em>You have the final say.</em></h2>
+    <p class="sub reveal">Brandlyft is in early access. Reading your website, confirming your brand, connecting your channels and publishing your own videos work today. From the public launch, Brandlyft creates new content every day, and you approve each post before it goes live.</p>
+    <div class="steps">
+      <article class="step-card reveal d1">
+        <div class="figure"><img src="/assets/img/figur-winken.webp" alt="Paper helper with a purple scarf waving" width="640" height="640" loading="lazy"></div>
+        <h3>Enter your website</h3>
+        <p>Brandlyft reads products, prices, variants, colours, fonts and tone of voice. Shopify shops are read from the product feed, so facts stay correct.</p>
+      </article>
+      <article class="step-card reveal d2">
+        <div class="figure"><img src="/assets/img/figur-nie.webp" alt="Paper helper throwing a card into the waste basket" width="640" height="640" loading="lazy"></div>
+        <h3>Confirm your brand</h3>
+        <p>You see how Brandlyft understood your brand and correct only what is wrong. Your rules, for example claims you never make, are respected in every post.</p>
+      </article>
+      <article class="step-card reveal d3">
+        <div class="figure"><img src="/assets/img/figur-jubel.webp" alt="Paper helper cheering in confetti" width="640" height="640" loading="lazy"></div>
+        <h3>Approve</h3>
+        <p>Connect Instagram, Facebook and TikTok with the official login of each platform. From launch you approve each post. TikTok videos always wait for your review.</p>
+      </article>
+    </div>
+    <p class="note reveal">An autopilot for Instagram and Facebook is planned. It would be off by default, and only you could switch it on, per channel.</p>
   </div>
 </section>
 
-<section id="pricing">
-  <h2>Pricing</h2>
-  <p class="sub">Simple packages by volume. Images and videos are included, failed attempts are on us, and you can cancel monthly.</p>
-  <div class="grid">
-    <div class="card"><h3>Start</h3><div class="price">€79 <small>/ month</small></div><ul><li>Instagram and Facebook</li><li>12 posts, 30 stories, 8 videos per month</li><li>Approval of every post</li></ul></div>
-    <div class="card featured"><h3>Growth</h3><div class="price">€199 <small>/ month</small></div><ul><li>Instagram, Facebook and TikTok</li><li>20 posts, 60 stories, 20 videos per month</li><li>Format tests and learning loop</li><li>One brand character</li></ul></div>
-    <div class="card"><h3>Pro</h3><div class="price">€449 <small>/ month</small></div><ul><li>Instagram, Facebook and TikTok</li><li>30 posts, 90 stories, 60 videos per month</li><li>Three brand characters</li><li>Monthly strategy report</li></ul></div>
+<section class="section tint">
+  <div class="wrap check-grid">
+    <div>
+      <p class="kicker reveal">The check</p>
+      <h2 class="reveal">Every post is checked <em>before you see it.</em></h2>
+      <p class="sub reveal">Claims come only from your own product information. Whatever breaks a rule, Brandlyft holds back and tells you why. The decision stays with you.</p>
+      <ul class="checklist reveal">
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prices as in your shop</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Every number from your product data</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Only products in stock</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>No invented reviews</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>No health claims</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>No false scarcity</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Your tone, casual or formal</span></li>
+          <li><span class="tick"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Real product photos, no invented products</span></li>
+      </ul>
+    </div>
+    <div class="check-art reveal d2">
+      <div class="figure"><img class="float" src="/assets/img/figur-pruefung.webp" alt="Paper helper checking a postcard with a magnifying glass, next to a stack with a purple tick" width="640" height="640" loading="lazy"></div>
+      <div class="sticky"><b>Held back</b>“Today only!” appears nowhere in your shop. That would be false scarcity.</div>
+    </div>
   </div>
-  <p class="note">Planned prices for the public launch, for businesses only. Early access customers get special conditions.</p>
 </section>
 
-<section>
-  <h2>Questions</h2>
-  <details><summary>Does Brandlyft post without my approval?</summary><p>No. Today Brandlyft only publishes what you submit yourself. An autopilot for Instagram and Facebook is planned: it would be off by default, and only you could switch it on, per channel. On TikTok there is no autopilot: you review every video, choose who can see it and publish it yourself, as TikTok requires.</p></details>
-  <details><summary>Which platforms are supported?</summary><p>Instagram, Facebook and TikTok at launch, connected through each platform's official login and API. More platforms will follow.</p></details>
-  <details><summary>What happens with my account data?</summary><p>We only use the permissions you grant to publish your content and read its performance. Your data and content are used only for your own workspace, never for other customers and never to train AI models. You can disconnect at any time. Details are in our <a href="/privacy.html">Privacy Policy</a>.</p></details>
-  <details><summary>Is AI-generated content labelled?</summary><p>Yes, from launch. Images and videos that Brandlyft creates with AI carry an invisible, machine-readable marking, and Brandlyft sets the AI label on Instagram and TikTok by default. You can switch it off for single pieces that, after your review, do not pass anything off as real, except for brand characters and, once it exists, on autopilot.</p></details>
+<section class="section">
+  <div class="wrap">
+    <p class="kicker reveal">Built for real products</p>
+    <h2 class="reveal">Built for brands <em>that sell real products.</em></h2>
+    <p class="sub reveal">Most AI tools produce generic content. Brandlyft is built around your actual products. This is how your content is made from the public launch:</p>
+    <div class="grid">
+      <article class="card reveal"><h3>True to your product</h3><p>Every image and video is generated from your real product photos and checked against them: colour, shape and details. No invented products.</p></article>
+      <article class="card reveal"><h3>Review before every post</h3><p>Independent review agents score every concept and every finished post and show you what they notice. The decision stays with you.</p></article>
+      <article class="card reveal"><h3>Reels with characters</h3><p>Short videos with a brand character that speaks in your language, lip-synced, with subtitles, labelled as AI. From the Growth plan, off by default. Whether you use it is up to you.</p></article>
+      <article class="card reveal"><h3>Honest marketing rules</h3><p>No fake reviews, no invented statistics, no false scarcity. Claims come only from your own product information.</p></article>
+      <article class="card reveal"><h3>A learning loop you can see</h3><p>From the Growth plan, Brandlyft tests formats and learns from your numbers. On the Pro plan a monthly report shows what was tested, what worked and what Brandlyft changed as a result.</p></article>
+      <article class="card reveal"><h3>Made in Germany</h3><p>Built with European data protection in mind. Our server, storage and AI analysis run on Google Cloud in the EU.</p></article>
+    </div>
+  </div>
 </section>
 
-<section id="access">
-  <div class="cta">
-    <h2>Get early access</h2>
-    <p>We are onboarding a small number of brands first. Join the waitlist and we will let you know when your spot is ready. Questions? Write to <a class="mail" href="mailto:hello@brandlyft.app">hello@brandlyft.app</a>.</p>
-    <a class="btn" href="/warteliste/">Join the waitlist</a>
+<section class="section tint" id="pricing">
+  <div class="wrap">
+    <p class="kicker reveal">Pricing</p>
+    <h2 class="reveal">Simple plans. <em>Cancel monthly.</em></h2>
+    <p class="sub reveal">Simple packages by volume. Images and videos are included, failed attempts are on us, and you can cancel monthly.</p>
+    <div class="grid">
+      <article class="card reveal"><h3>Start</h3><div class="price">€79 <small>/ month</small></div><ul><li>Instagram and Facebook</li><li>12 posts, 30 stories, 8 videos per month</li><li>Approval of every post</li></ul></article>
+      <article class="card reveal featured"><h3>Growth</h3><div class="price">€199 <small>/ month</small></div><ul><li>Instagram, Facebook and TikTok</li><li>20 posts, 60 stories, 20 videos per month</li><li>Format tests and learning loop</li><li>One brand character</li></ul></article>
+      <article class="card reveal"><h3>Pro</h3><div class="price">€449 <small>/ month</small></div><ul><li>Instagram, Facebook and TikTok</li><li>30 posts, 90 stories, 60 videos per month</li><li>Three brand characters</li><li>Monthly strategy report</li></ul></article>
+    </div>
+    <p class="note">Planned prices for the public launch, for businesses only. Early access customers get special conditions.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap faq">
+    <p class="kicker reveal">Questions</p>
+    <h2 class="reveal">Good to <em>know.</em></h2>
+      <details><summary>Does Brandlyft post without my approval?</summary><p>No. Today Brandlyft only publishes what you submit yourself. An autopilot for Instagram and Facebook is planned: it would be off by default, and only you could switch it on, per channel. On TikTok there is no autopilot: you review every video, choose who can see it and publish it yourself, as TikTok requires.</p></details>
+      <details><summary>What happens to my website in the preview?</summary><p>Brandlyft only reads public pages of your website, like a visitor would, and respects robots.txt. We keep the result for 7 days so the same website is not analysed twice. Nothing gets posted. Details are in our <a href="/privacy.html#preview">Privacy Policy</a>.</p></details>
+      <details><summary>Which platforms are supported?</summary><p>Instagram, Facebook and TikTok at launch, connected through each platform's official login and API. More platforms will follow.</p></details>
+      <details><summary>What happens with my account data?</summary><p>We only use the permissions you grant to publish your content and read its performance. Your data and content are used only for your own workspace, never for other customers and never to train AI models. You can disconnect at any time. Details are in our <a href="/privacy.html">Privacy Policy</a>.</p></details>
+      <details><summary>Is AI-generated content labelled?</summary><p>Yes, from launch. Images and videos that Brandlyft creates with AI carry an invisible, machine-readable marking, and Brandlyft sets the AI label on Instagram and TikTok by default. You can switch it off for single pieces that, after your review, do not pass anything off as real, except for brand characters and, once it exists, on autopilot.</p></details>
+  </div>
+</section>
+
+<section class="finale" id="access">
+  <div class="scene"><img class="drift" src="/assets/img/hoch-oben-1376.webp" srcset="/assets/img/hoch-oben-hoch.webp 820w, /assets/img/hoch-oben-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="The balloon with the shop floats above the clouds at sunrise, the paper helpers cheer" width="1376" height="768" loading="lazy"></div>
+  <div class="wrap">
+    <h2 class="reveal">See what Brandlyft makes <em>from your website.</em></h2>
+    <p class="reveal">Three example posts with your real products, each with its check report. Afterwards you decide whether to join the waitlist.</p>
+    <form class="field reveal" action="/waitlist/" method="get" data-demo-form novalidate>
+      <label class="sr" for="site-url-2">Your website</label>
+      <input id="site-url-2" name="website" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="yourshop.com" required>
+      <button class="btn violet" type="submit">Show examples</button>
+    </form>
+    <p class="form-msg" data-demo-msg role="status" aria-live="polite"></p>
+    <p class="also">Rather sign up right away? <a href="/waitlist/">Join the waitlist</a> · Questions? <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></p>
   </div>
 </section>
 </main>
-<footer>
-  <a href="/imprint.html">Imprint / Impressum</a><a href="/privacy.html">Privacy Policy</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a>
-  <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach, Germany · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="/"><img src="/logo.svg" alt="" width="26" height="26">Brandlyft</a>
+    <div class="foot-links"><a href="/imprint.html">Imprint / Impressum</a><a href="/privacy.html">Privacy Policy</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a></div>
+    <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach, Germany · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+  </div>
 </footer>
+
+<div class="stage" id="demo" role="dialog" aria-modal="true" aria-labelledby="demo-title" hidden>
+  <div class="stage-top">
+    <a class="logo" href="/"><img src="/logo.svg" alt="" width="28" height="28">Brandlyft</a>
+    <span class="stage-site" data-host-pill hidden></span>
+    <button class="close" type="button" data-close aria-label="Close preview"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  </div>
+  <h2 class="sr" id="demo-title">Preview of your posts</h2>
+
+  <section class="step has-scene" data-step="read" hidden>
+    <div class="step-in">
+      <div class="scene"><img class="drift" src="/assets/img/lesen-1376.webp" srcset="/assets/img/lesen-hoch.webp 820w, /assets/img/lesen-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="Paper helpers exploring the shelves of a shop with a magnifying glass, a ladder and a colour fan" width="1376" height="768" loading="lazy"></div>
+      <div class="step-wrap">
+        <div class="panel">
+          <p class="label">Brandlyft is reading</p>
+          <h3 class="big-typed typed" data-type tabindex="-1">Taking a look at <em data-host>your website</em> …</h3>
+          <div class="finds">
+            <div class="find wide" data-find="site"><b>Your site</b><span class="wait pulse">reading …</span></div>
+            <div class="find" data-find="products"><b>Products</b><span class="wait pulse">looking …</span></div>
+            <div class="find" data-find="colors"><b>Colours</b><span class="wait pulse">looking …</span></div>
+            <div class="find" data-find="fonts"><b>Fonts</b><span class="wait pulse">looking …</span></div>
+            <div class="find" data-find="tone"><b>Your tone</b><span class="wait pulse">coming up …</span></div>
+          </div>
+          <button class="btn violet" type="button" data-next disabled>On to the questions</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" data-step="q1" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img class="float" src="/assets/img/figur-du-sie.webp" alt="Two paper helpers, one waving casually, one bowing with a top hat" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Question 1 of 3, while Brandlyft reads</span>
+        <h2 class="h-q" tabindex="-1">How should your posts <em>sound?</em></h2>
+        <div class="choices two">
+          <button class="choice" type="button" data-address="informal" aria-pressed="false"><span class="big">Casual</span><span class="small">“Great to have you here.”</span></button>
+          <button class="choice" type="button" data-address="formal" aria-pressed="false"><span class="big">Formal</span><span class="small">“We are delighted to welcome you.”</span></button>
+        </div>
+        <p class="aside" data-address-hint hidden></p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="step" data-step="q2" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img class="float" src="/assets/img/figur-nie.webp" alt="Paper helper throwing a card into the waste basket" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Question 2 of 3</span>
+        <h2 class="h-q" tabindex="-1">What would you <em>never</em> say?</h2>
+        <div class="pills">
+            <button class="pill-btn" type="button" data-never="discount_shouting" aria-pressed="false">Shouting about sales</button>
+            <button class="pill-btn" type="button" data-never="health_claims" aria-pressed="false">Health promises</button>
+            <button class="pill-btn" type="button" data-never="jargon" aria-pressed="false">Jargon</button>
+            <button class="pill-btn" type="button" data-never="emojis" aria-pressed="false">Emojis</button>
+            <button class="pill-btn" type="button" data-never="competitors" aria-pressed="false">Talking down competitors</button>
+            <button class="pill-btn" type="button" data-never="pressure" aria-pressed="false">Pressure like “today only”</button>
+        </div>
+        <button class="btn violet" type="button" data-next>Next</button>
+        <p class="aside">Brandlyft checks every post for health claims and false scarcity anyway.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="step" data-step="q3" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img class="float" src="/assets/img/figur-wie-oft.webp" alt="Paper helper with a calendar on a stack of postcards" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Question 3 of 3</span>
+        <h2 class="h-q" tabindex="-1">How often should you <em>post?</em></h2>
+        <div class="choices rows">
+            <button class="choice" type="button" data-frequency="3_week" aria-pressed="false"><span class="big">3 times a week</span><span class="small">good to start</span></button>
+            <button class="choice" type="button" data-frequency="daily" aria-pressed="false"><span class="big">Every day</span><span class="small">one post or reel</span></button>
+            <button class="choice" type="button" data-frequency="twice_daily" aria-pressed="false"><span class="big">Twice a day</span><span class="small">a post and a story</span></button>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="step has-scene" data-step="kjell" hidden>
+    <div class="step-in">
+      <div class="scene"><img class="drift" src="/assets/img/aufstieg-1376.webp" srcset="/assets/img/aufstieg-hoch.webp 820w, /assets/img/aufstieg-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="The balloon with the shop rises above the trees, the owner waves from the door" width="1376" height="768" loading="lazy"></div>
+      <div class="step-wrap">
+        <div class="panel">
+          <div class="me"><span class="avatar" aria-hidden="true">K</span><div><b>Kjell Kuttler</b><div class="who">Founder of Brandlyft</div></div></div>
+          <h3 class="big-typed typed" data-type tabindex="-1">Hi, I'm Kjell.</h3>
+          <p>I first built Brandlyft for my own shop. Right now Brandlyft is writing your posts and checking every single one.</p>
+          <p>First, a quick practice round: this is how you sort out what is not right.</p>
+          <button class="btn violet" type="button" data-next>Start practice</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" data-step="practice" hidden>
+    <div class="step-in"><div class="step-wrap duo">
+      <div>
+        <span class="qno">Practice</span>
+        <h2 class="h-q" tabindex="-1">If it is not true, <em>it goes.</em></h2>
+        <p class="lead" data-practice-lead>The check held this draft back. Swipe it to the left or tap ✕.</p>
+        <div data-practice-done hidden>
+          <p class="done-line">Exactly. <em data-done-em>Your real posts are almost ready.</em></p>
+          <button class="btn violet" type="button" data-to-stack>See your posts</button>
+        </div>
+        <div class="figure mini"><img class="float" data-practice-figure src="/assets/img/figur-pruefung.webp" alt="Paper helper checking with a magnifying glass" width="640" height="640" loading="lazy"></div>
+      </div>
+      <div class="deck practice-card" data-practice-deck></div>
+    </div></div>
+  </section>
+
+  <section class="step" data-step="wait" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img class="float" src="/assets/img/figur-warten.webp" alt="Paper helper drinking tea on a sandbag" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Almost there</span>
+        <h2 class="h-q" tabindex="-1">Brandlyft is writing and <em>checking</em> your posts.</h2>
+        <p class="lead">This usually takes just a few more seconds.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="step" data-step="stack" hidden>
+    <div class="step-in"><div class="step-wrap trio">
+      <div class="intro">
+        <h2 class="h-stack" tabindex="-1">Your first posts. <em>Approve what you like.</em></h2>
+        <div class="queue" data-queue></div>
+      </div>
+      <div>
+        <div class="deck" data-deck></div>
+        <div class="decide">
+          <button class="round no" type="button" data-decide="no" aria-label="Decline"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
+          <button class="round yes" type="button" data-decide="yes" aria-label="Approve"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.6 3.6L15.5 6.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <p class="howto">Swipe or tap. Nothing gets published.</p>
+      </div>
+      <aside class="side-report">
+        <p class="label">Check report for this post</p>
+        <ul data-side-list></ul>
+        <div class="figure side-figure"><img class="float" src="/assets/img/figur-pruefung.webp" alt="" width="640" height="640" loading="lazy"></div>
+      </aside>
+    </div></div>
+  </section>
+
+  <section class="step has-scene" data-step="week" hidden>
+    <div class="confetti" data-confetti></div>
+    <div class="step-in">
+      <div class="scene"><img class="drift" src="/assets/img/hoch-oben-1376.webp" srcset="/assets/img/hoch-oben-hoch.webp 820w, /assets/img/hoch-oben-1376.webp 1376w" sizes="(max-width: 640px) 100vw, 100vw" alt="The balloon floats above the clouds at sunrise" width="1376" height="768" loading="lazy"></div>
+      <div class="step-wrap">
+        <div class="panel">
+          <h2 class="h-end" tabindex="-1">This is what your <em>week</em> could look like.</h2>
+          <div class="week" data-week></div>
+          <p class="tally" data-tally></p>
+          <form class="end-form" data-end-form novalidate>
+            <label class="sr" for="end-email">E-mail address</label>
+            <div class="row-in"><input id="end-email" type="email" autocomplete="email" inputmode="email" placeholder="you@yourshop.com" required><button class="btn violet" type="submit">Save my spot</button></div>
+            <label class="check"><input type="checkbox" data-consent required><span>I would like to join the Brandlyft waitlist and hear by e-mail when my spot is ready and how development is going. I can unsubscribe at any time.</span></label>
+            <div class="hp" aria-hidden="true"><input type="text" tabindex="-1" autocomplete="off" data-hp></div>
+            <p class="fine">We keep the brand profile and your answers from this preview with your address, so you do not have to start over later. More in our <a href="/privacy.html#preview">Privacy Policy</a>.</p>
+            <p class="msg" data-end-msg role="status" aria-live="polite"></p>
+          </form>
+          <div class="thanks" data-thanks hidden><div class="figure"><img src="/assets/img/figur-jubel-160.webp" alt="" width="160" height="160" loading="lazy"></div><span>Almost done: we sent you an e-mail. Click the link in it and your spot is confirmed.</span></div>
+          <button class="link again" type="button" data-restart>Try another website</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" data-step="error" hidden>
+    <div class="step-in"><div class="step-wrap ask">
+      <div class="figure"><img src="/assets/img/figur-nie.webp" alt="Paper helper throwing a card into the waste basket" width="640" height="640" loading="lazy"></div>
+      <div>
+        <span class="qno">Preview</span>
+        <h2 class="h-q" tabindex="-1">That did not <em>work.</em></h2>
+        <p class="lead" data-error-text></p>
+        <div class="btn-row"><button class="btn violet" type="button" data-restart>Enter another website</button><a class="btn ghost" href="/waitlist/">Join the waitlist</a></div>
+      </div>
+    </div></div>
+  </section>
+
+  <div class="progress" data-progress hidden role="status" aria-live="polite">
+    <div class="figure"><img src="/assets/img/figur-warten-160.webp" alt="" width="160" height="160" loading="lazy"></div>
+    <div class="p-body"><div class="p-t" data-p-title></div><div class="p-s" data-p-sub></div><div class="bar"><i data-p-bar></i></div></div>
+  </div>
 </div>
+
+<script src="/app/config.js"></script>
+<script src="/assets/site.js"></script>
+<script src="/assets/demo.js"></script>
 </body>
 </html>

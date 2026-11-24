@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src 'self' blob: https://storage.googleapis.com; connect-src 'self' https://brandlyft-api-318800310726.europe-west3.run.app https://storage.googleapis.com; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Warteliste · Brandlyft</title>
 <meta name="description" content="Brandlyft liest deine Website, erstellt Beiträge, Reels und Storys mit deinen echten Produkten und veröffentlicht sie auf Instagram, Facebook und TikTok. Trag dich auf die Warteliste ein.">
 <link rel="alternate" hreflang="en" href="https://brandlyft.app/waitlist/">
@@ -11,23 +11,22 @@
 <link rel="alternate" hreflang="x-default" href="https://brandlyft.app/waitlist/">
 <script src="/lang.js"></script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="wrap">
 <header class="top">
-  <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
-  <nav><a class="hide-sm" href="/de/#how">So funktioniert es</a><a class="hide-sm" href="/de/#pricing">Preise</a><a href="/app/">Anmelden</a><a class="lang" href="/waitlist/?lang=en" hreflang="en" title="English">EN</a></nav>
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+    <nav class="nav" aria-label="Brandlyft"><a class="wide" href="/de/#how">So funktioniert es</a><a class="wide" href="/de/#pricing">Preise</a><a class="wide" href="/warteliste/">Warteliste</a><a class="pill" href="/app/">Anmelden</a><a class="lang" href="/waitlist/?lang=en" hreflang="en" title="English">EN</a></nav>
+  </div>
 </header>
-
-<main>
-<section class="hero narrow">
+<main class="page">
+<div class="wrap">
   <span class="eyebrow">Warteliste</span>
-  <h1>Social Media für deine Marke, jeden Tag. Du gibst nur noch frei.</h1>
+  <h1>Social Media für deine Marke, jeden Tag. <em>Du gibst nur noch frei.</em></h1>
   <p class="lead">Du gibst deine Website ein, Brandlyft lernt deine Marke und deine Produkte. Zum Start erstellt es Beiträge, Reels und Storys und veröffentlicht sie nach deiner Freigabe auf Instagram, Facebook und TikTok. Aus den Zahlen lernt es, was wirklich ankommt.</p>
-</section>
-
-<section class="form-wrap">
+  <p class="aside-link">Lieber erst sehen, was Brandlyft aus deiner Website macht? <a href="/de/#access">Zur Vorschau ohne Anmeldung</a></p>
+  <section class="form-wrap">
   <form id="warteliste" class="signup" novalidate>
     <h2>Platz auf der Warteliste sichern</h2>
     <p class="sub">Wir starten mit wenigen Betrieben und richten jeden persönlich ein. Wer früh dabei ist, bekommt besondere Konditionen.</p>
@@ -44,26 +43,22 @@
     <div class="hp" aria-hidden="true"><label for="firma">Firma</label><input id="firma" name="firma" type="text" tabindex="-1" autocomplete="off"></div>
     <label class="check"><input id="consent" name="consent" type="checkbox" required>
       <span>Ich möchte auf die Brandlyft-Warteliste und per E-Mail erfahren, wann mein Platz frei ist und wie die Entwicklung vorangeht. Abmelden geht jederzeit. Mehr in der <a href="/datenschutz.html#warteliste">Datenschutzerklärung</a>.</span></label>
-    <button class="btn" type="submit">Eintragen</button>
+    <button class="btn violet" type="submit">Eintragen</button>
     <p class="msg" id="msg" role="status" aria-live="polite"></p>
   </form>
   <div class="done" id="done" hidden>
     <h2>Fast geschafft</h2>
     <p>Wir haben dir eine Mail geschickt. Klick auf den Link darin, dann steht dein Platz fest. Keine Mail da? Schau bitte auch im Spam-Ordner nach.</p>
   </div>
-</section>
-
-<section>
-  <div class="grid">
-    <div class="card"><div class="step">1</div><h3>Website eingeben</h3><p>Brandlyft liest Produkte, Preise, Farben, Schriften und Tonfall. Du bestätigst nur, was es verstanden hat.</p></div>
-    <div class="card"><div class="step">2</div><h3>Kanäle verbinden</h3><p>Instagram, Facebook und TikTok über die offizielle Anmeldung der Plattformen. TikTok-Videos gibst du immer selbst frei.</p></div>
-    <div class="card"><div class="step">3</div><h3>Posten und lernen</h3><p>Ab dem Start plant, erstellt und veröffentlicht Brandlyft. Es wertet Aufrufe und Zuschauzeit aus und macht mehr von dem, was funktioniert.</p></div>
+  </section>
+  <div class="mini-steps">
+      <article class="card"><div class="figure mini-fig"><img src="/assets/img/figur-winken.webp" alt="" width="640" height="640" loading="lazy"></div><h3>Website eingeben</h3><p>Brandlyft liest Produkte, Preise, Farben, Schriften und Tonfall. Du bestätigst nur, was es verstanden hat.</p></article>
+      <article class="card"><div class="figure mini-fig"><img src="/assets/img/figur-nie.webp" alt="" width="640" height="640" loading="lazy"></div><h3>Kanäle verbinden</h3><p>Instagram, Facebook und TikTok über die offizielle Anmeldung der Plattformen. TikTok-Videos gibst du immer selbst frei.</p></article>
+      <article class="card"><div class="figure mini-fig"><img src="/assets/img/figur-jubel.webp" alt="" width="640" height="640" loading="lazy"></div><h3>Posten und lernen</h3><p>Ab dem Start plant, erstellt und veröffentlicht Brandlyft. Es wertet Aufrufe und Zuschauzeit aus und macht mehr von dem, was funktioniert.</p></article>
   </div>
   <p class="note">Ehrliche Regeln in jedem Beitrag: keine erfundenen Bewertungen, keine erfundenen Zahlen, keine falsche Knappheit.</p>
-</section>
-
-<section class="faq">
-  <h2>Häufige Fragen</h2>
+  <section class="faq page-faq">
+    <h2>Häufige Fragen</h2>
   <details><summary>Postet Brandlyft ohne mich?</summary><p>Nicht ohne deine Entscheidung. Auf TikTok gibst du jedes Video selbst frei, so verlangt es TikTok. Auf Instagram und Facebook gibst du ebenfalls jeden Beitrag frei. Ein Autopilot ist geplant: Er wäre standardmäßig aus, und nur du könntest ihn einschalten, für jeden Kanal einzeln.</p></details>
   <details><summary>Muss eine KI-Figur für mich sprechen?</summary><p>Nein. Eine sprechende Markenfigur ist ein geplantes Angebot für Videos ab dem Paket Wachstum, kein Muss, und standardmäßig aus. Ob sie in deinen Inhalten vorkommt, entscheidest du.</p></details>
   <details><summary>Klingt das am Ende noch nach mir?</summary><p>Brandlyft liest deine Website und schlägt dir ein Markenprofil vor: Produkte, Farben, Tonfall, Dinge, die du nie sagen würdest. Du bestätigst oder korrigierst es, bevor der erste Beitrag entsteht. Gezeigt werden deine echten Produkte, keine erfundenen.</p></details>
@@ -72,12 +67,15 @@
   <details><summary>Schützt mich Brandlyft vor Abmahnungen?</summary><p>Ab dem Start prüfen Prüf-Agenten jeden Entwurf gegen feste Regeln, zum Beispiel keine Heilversprechen, keine erfundenen Bewertungen und keine falsche Knappheit, und zeigen dir, was ihnen auffällt. Eine Rechtsberatung ersetzt das nicht. Was auf deinem Kanal erscheint, verantwortest du, deshalb gibst du es frei.</p></details>
   <details><summary>Wann geht es los?</summary><p>Meta hat das Veröffentlichen über Brandlyft freigegeben, bei TikTok läuft die Prüfung noch. Danach starten wir mit wenigen Betrieben und richten jeden persönlich ein. Wer auf der Warteliste steht, erfährt es zuerst.</p></details>
 </section>
-</main>
-<footer>
-  <a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a>
-  <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
-</footer>
 </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="26" height="26">Brandlyft</a>
+    <div class="foot-links"><a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a></div>
+    <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+  </div>
+</footer>
 <script src="/app/config.js"></script>
 <script src="/warteliste/warteliste.js"></script>
 </body>

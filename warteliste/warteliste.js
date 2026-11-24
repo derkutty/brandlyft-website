@@ -28,6 +28,9 @@
 
   var form = document.getElementById("warteliste");
   if (form) {
+    // Coming from the website field on the start page without JavaScript: keep what was typed
+    var typed = window.URLSearchParams ? new URLSearchParams(location.search).get("website") : "";
+    if (typed && form.website && !form.website.value) form.website.value = typed.slice(0, 200);
     var msg = document.getElementById("msg");
     var button = form.querySelector("button");
     form.addEventListener("submit", function (e) {

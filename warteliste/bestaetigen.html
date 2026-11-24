@@ -3,29 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src 'self' blob: https://storage.googleapis.com; connect-src 'self' https://brandlyft-api-318800310726.europe-west3.run.app https://storage.googleapis.com; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <title>Adresse bestätigen · Brandlyft</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="wrap">
 <header class="top">
-  <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+    <nav class="nav" aria-label="Brandlyft"><a class="wide" href="/de/#how">So funktioniert es</a><a class="wide" href="/de/#pricing">Preise</a><a class="wide" href="/warteliste/">Warteliste</a><a class="pill" href="/app/">Anmelden</a></nav>
+  </div>
 </header>
-<main>
-<section class="form-wrap">
-  <div class="done" id="status">
+<main class="page">
+<div class="wrap">
+  <section class="form-wrap">
+    <div class="figure confirm-fig"><img class="float" src="/assets/img/figur-jubel.webp" alt="" width="640" height="640"></div>
+    <div class="done" id="status">
     <h2>Einen Moment</h2>
     <p>Wir bestätigen deine Adresse.</p>
   </div>
-</section>
-</main>
-<footer>
-  <a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a>
-</footer>
+  </section>
 </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="26" height="26">Brandlyft</a>
+    <div class="foot-links"><a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a></div>
+    <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+  </div>
+</footer>
 <script src="/app/config.js"></script>
 <script src="/warteliste/warteliste.js"></script>
 </body>

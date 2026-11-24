@@ -3,19 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; media-src 'self' blob: https://storage.googleapis.com; connect-src 'self' https://brandlyft-api-318800310726.europe-west3.run.app https://storage.googleapis.com; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Impressum / Imprint · Brandlyft</title>
 <meta name="description" content="Impressum von Brandlyft">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="wrap">
 <header class="top">
-  <a class="logo" href="/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
-  <nav><a class="hide-sm" href="/#how">How it works</a><a class="hide-sm" href="/#pricing">Pricing</a><a href="/#access">Early access</a></nav>
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="30" height="30">Brandlyft</a>
+    <nav class="nav" aria-label="Brandlyft"><a class="wide" href="/de/#how">So funktioniert es</a><a class="wide" href="/de/#pricing">Preise</a><a class="wide" href="/warteliste/">Warteliste</a><a class="pill" href="/app/">Anmelden</a></nav>
+  </div>
 </header>
-<main class="legal">
+<main class="page">
+<div class="wrap legal">
 
 <h1>Impressum</h1>
 <p>Angaben gemäß § 5 DDG</p>
@@ -32,11 +34,14 @@
 <h1>Imprint</h1>
 <p>Brandlyft is operated by Kjell Kuttler (sole proprietorship), Richard-Zanders-Straße 53, 51469 Bergisch Gladbach, Germany. Contact: <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a>. VAT ID: DE460279703.</p>
 
-</main>
-<footer>
-  <a href="/imprint.html">Imprint / Impressum</a><a href="/privacy.html">Privacy Policy</a><a href="/datenschutz.html">Datenschutz</a><a href="/terms.html">Terms of Service</a>
-  <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach, Germany · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
-</footer>
 </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="/de/"><img src="/logo.svg" alt="" width="26" height="26">Brandlyft</a>
+    <div class="foot-links"><a href="/imprint.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a></div>
+    <div class="foot-meta">© 2026 Brandlyft · Kjell Kuttler · Bergisch Gladbach · <a href="mailto:hello@brandlyft.app">hello@brandlyft.app</a></div>
+  </div>
+</footer>
 </body>
 </html>
