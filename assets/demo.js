@@ -15,7 +15,7 @@
     de: {
       bad: "Bitte gib eine Website ein, zum Beispiel deinshop.de.",
       network: "Die Verbindung zu Brandlyft ist abgebrochen. Bitte versuch es noch einmal.",
-      typed: ["Ich schau mir ", "", " an …"],
+      typed: ["Brandlyft liest ", "", " …"],
       p: {
         start: ["Lese deine Website", "{host}"], site: ["Startseite gelesen", "{title}"],
         products: ["{n} Produkte gefunden", "für die Beispiele zählen nur vorrätige mit Foto"],
@@ -44,7 +44,7 @@
     en: {
       bad: "Please enter a website, for example yourshop.com.",
       network: "The connection to Brandlyft was interrupted. Please try again.",
-      typed: ["Taking a look at ", "", " …"],
+      typed: ["Brandlyft is reading ", "", " …"],
       p: {
         start: ["Reading your website", "{host}"], site: ["Home page read", "{title}"],
         products: ["{n} products found", "only products in stock with a photo count for the examples"],
@@ -187,7 +187,7 @@
     $("[data-practice-deck]").textContent = "";
     $("[data-practice-done]").hidden = true;
     $("[data-practice-lead]").hidden = false;
-    $("[data-practice-figure]").src = "/assets/img/figur-pruefung.webp";
+    $("[data-practice-figure]").src = "/assets/img/kjell-pruefung.webp";
     $("[data-deck]").textContent = "";
     $("[data-queue]").textContent = "";
     $("[data-week]").textContent = "";
@@ -671,7 +671,7 @@
       if (S.practiceDone) return;
       S.practiceDone = true;
       no.disabled = true;
-      $("[data-practice-figure]").src = "/assets/img/figur-wegpusten.webp";
+      $("[data-practice-figure]").src = "/assets/img/kjell-jubel.webp";
       fly(c, "blow", function () {
         c.remove();
         row.remove();

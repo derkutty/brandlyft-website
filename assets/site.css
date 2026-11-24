@@ -508,3 +508,16 @@ html.locked, html.locked body { overflow: hidden; }
 .confirm-fig { max-width: 180px; margin: 0 auto 4px; }
 .form-wrap .done { text-align: center; }
 @media (prefers-color-scheme: dark) { .logo img { border-radius: 9px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .16); } }
+
+/* Kjell als Figur, die durch die Vorschau führt */
+.guide { display: flex; align-items: flex-start; gap: 12px; margin: 0 0 18px; }
+.guide .avatar { width: 56px; height: 56px; }
+.bubble { margin: 4px 0 0; padding: 10px 14px; background: var(--paper-2); border-radius: 6px 18px 18px 18px; font-size: 15px; line-height: 1.45; color: var(--ink); }
+.bubble b { font-weight: 750; }
+.progress .avatar { width: 46px; height: 46px; box-shadow: none; }
+@media (max-width: 640px) {
+  .guide { gap: 10px; margin-bottom: 14px; }
+  .guide .avatar { width: 46px; height: 46px; }
+  .bubble { font-size: 14px; padding: 9px 12px; }
+  .progress .avatar { width: 36px; height: 36px; }
+}
